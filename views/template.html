@@ -3,6 +3,8 @@
 <head>
   <meta charset = "utf-8">
   <title>Curiositylandia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta name = "description" content = "Curiositylandia">
   <meta name = "author" content = "Curiositylandia">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,15 +16,21 @@
   h1 { font-size: 45px; font-weight: 100;}
   h2 { font-size: 40px; font-weight: 100;}
   h3 { font-size: 35px; font-weight: 100; line-height: 45px;}
-  header { }
+  header .lang { position: absolute; top:10px; right: 20px;}
+  header .menu { position: absolute; top: 35px; right: 20px;width: 40px; height: 35px; display: none; z-index: 10000;}
+  header .menu span { width: 100%; height: 5px; position: absolute; background-color: #000;}
+  header .menu span.top { top:0px; }
+  header .menu span.middle { top:15px;}
+  header .menu span.bottom { bottom: 0px;}
   header h1 { margin: 0; padding: 20px;}
   header p { margin: 0; padding: 0px 20px; font-size: 16px; margin-bottom: 20px;}
   header .hero { background-color: #000; min-height: 600px; color: #fff; padding-top: 30px; padding-bottom: 30px; }
   header .hero h2 { font-size: 60px; line-height: 80px;}
+  header .holder { padding: 25px;}
 
   main section  { padding-top: 50px; padding-bottom: 50px;}
   main section .actions { text-align: center; margin-top: 25px; }
-  main section.coloring-sheets ul { margin: 0; padding: 0; list-style: none; font-size: 0;}
+  main section.coloring-sheets ul { margin: 0; padding: 0; list-style: none; font-size: 0; margin-left: -15px; margin-right: -15px;}
   main section.coloring-sheets ul li { width: 33.33%; vertical-align: middle; display: inline-block; padding: 15px;}
   main section .holder { padding: 25px;}
 
@@ -53,27 +61,61 @@
   margin: auto;
   padding-bottom: 50px;
 }
-
+.nav { position: fixed; top: 0; bottom: 0;right: 0px; width: 30%; background-color: #fbfbfb; box-shadow: 5px 5px 40px rgba(0,0,0,.35); z-index: 10; display: none;}
+.nav.open { display: block; }
+.nav ul { margin-top: 100px; list-style: none; padding: 0; margin-left: 25px;}
+.nav ul li { margin-bottom: 15px; font-size: 18px; color: #444;}
+.nav ul li.indent { padding-left: 10px;}
+.nav ul li a { font-size: 18px; color: #000; font-weight: 400;}
+.nav ul li.last { margin-top: 30px;}
+.nav ul li.last a { font-size: 16px; font-weight: 100; }
 @media only screen and (max-width: 800px) {
   .row.half .col { width: 100%; display:block;}
   footer .row p { text-align: center; }
   main section.coloring-sheets ul li { width: 100%; display: block;}
   header .hero { text-align: center; }
+  header .lang { display: none;}
+  header .menu { display: block;}
+  header p { display: none;}
+  .nav { width: 70%;}
+  a.btn { min-width: 160px;}
+  header h1 { font-size: 40px;}
 
 }
 
+
   </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
+<div class="nav">
+  <ul>
+    <li><a href="#">Buy Book</a></li>
+    <li><a href="#">Download Book</a></li>
+    <li>Books in our collection:</li>
+    <li class="indent"><a href="#">WOW! I Can See Clearly Now!</a></li>
+    <li class="indent"><a href="#">Achoo is Short for Allergies! Achoo! (Coming Soon)</a></li>
+    <li class="last"><a href="#"><a href="#">English</a> | <a href="#">Español</a></a></li>
+
+  </ul>
+</div>
 <div id="app">
 <header>
+<div class="lang"><a href="#">English</a> | <a href="#">Español</a></div>
+<div class="menu">
+    <a href="#" class="onClickNav"><span class="top"></span><span class="middle"></span><span class="bottom"></span></a>
+</div>
 <h1>Curiositylandia</h1>
 <p>Books in our collection: WOW! I Can See Clearly Now!  | Achoo is Short for Allergies! Achoo! (Coming Soon)</p>
 <div class="hero">
   <div class="row">
     <div class="col">
-      <h2>WOW! I Can <br />See Clearly Now!</h2>
-        <a href="#" class="btn">BUY BOOK</a>  <a href="#" class="btn">DOWNLOAD</a>
+      <div class="holder">
+        <h2>WOW! I Can <br />See Clearly Now!</h2>
+          <a href="#" class="btn">BUY BOOK</a>  <a href="#" class="btn">DOWNLOAD</a>
+      </div>
+
     </div>
     <div class="col"></div>
   </div>
@@ -200,9 +242,10 @@ var mySwiper = new Swiper('.swiper-container.images', {
   spaceBetween : 15,
   navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
   breakpoints: {
-    1024: { slidesPerView: 3 },
     800: { slidesPerView: 3 },
-    440: { slidesPerView: 1 },
+    640: { slidesPerView: 1 },
+    480: { slidesPerView: 1 },
+    320: { slidesPerView: 1 },
   },
 });
 
@@ -212,6 +255,13 @@ var mySwiper1 = new Swiper('.swiper-container.quotes', {
   slidesPerView : 1,
   spaceBetween : 0,
   pagination: { el: '.swiper-pagination' }
+});
+
+$(document).ready(function(){
+  $("a.onClickNav").click(function(){
+    $(this).toggleClass("active");
+    $(".nav").toggleClass("open");
+  });
 });
 </script>
 </body>
