@@ -18,6 +18,10 @@
   h3 { font-size: 35px; font-weight: 100; line-height: 45px;}
   header .lang { position: absolute; top:10px; right: 20px;}
   header .menu { position: absolute; top: 33px; right: 20px;width: 25px; height: 20px; display: none; z-index: 10000;}
+  header .menu a { display: block; width: 25px; height: 20px; }
+  header .menu a.active span.top { transform: rotate(45deg); top:9px; }
+  header .menu a.active span.middle { transform: rotate(-45deg); }
+  header .menu a.active span.bottom { display: none; }
   header .menu span { width: 100%; height: 2px; position: absolute; background-color: #000;}
   header .menu span.top { top:0px; }
   header .menu span.middle { top:9px;}
@@ -81,7 +85,7 @@
   a.btn { min-width: 150px;}
   header h1 { font-size: 30px;}
   .swiper-button-next { display: none;}
-.swiper-button-prev { display: none;} 
+.swiper-button-prev { display: none;}
 }
 
 
@@ -91,7 +95,7 @@
 </head>
 <body>
 <div class="nav">
-  <ul>
+  <ul class="list">
     <li><a href="#">Buy Book</a></li>
     <li><a href="#">Download Book</a></li>
     <li>Books in our collection:</li>
@@ -213,12 +217,23 @@
         <div class="col">
           <div class="holder">
         <h3 class="centered">WOW! I Can See Clearly Now! Coloring Sheets</h3>
-        <ul>
-          <li><img src="https://via.placeholder.com/800x800" class="responsive"/></li>
-          <li><img src="https://via.placeholder.com/800x800" class="responsive"/></li>
-          <li><img src="https://via.placeholder.com/800x800" class="responsive"/></li>
-        </ul>
+
+      <div class="swiper-container coloring">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="https://via.placeholder.com/800x800" class="responsive"/></div>
+          <div class="swiper-slide"><img src="https://via.placeholder.com/800x800" class="responsive"/></div>
+          <div class="swiper-slide"><img src="https://via.placeholder.com/800x800" class="responsive"/></div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
+
+
+    </div>
+        <div class="centered">
+          <a href="#" class="btn dark">DOWNLOAD</a>
+        </div>
         </div>
       </div>
 
@@ -250,6 +265,19 @@ var mySwiper = new Swiper('.swiper-container.images', {
   },
 });
 
+var mySwiper2 = new Swiper('.swiper-container.coloring', {
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView : 3,
+  spaceBetween : 15,
+  breakpoints: {
+    800: { slidesPerView: 3 },
+    640: { slidesPerView: 1.1 },
+    480: { slidesPerView: 1.1 },
+    320: { slidesPerView: 1.1 },
+  },
+});
+
 var mySwiper1 = new Swiper('.swiper-container.quotes', {
   direction: 'horizontal',
   loop: true,
@@ -263,6 +291,14 @@ $(document).ready(function(){
     $(this).toggleClass("active");
     $(".nav").toggleClass("open");
   });
+
+$("#app").click(function(e){
+  if($(e.target).hasClass("onClickNav")){ return; }
+  $(".menu").removeClass("active");
+  $(".nav").removeClass("open");
+});
+
+
 });
 </script>
 </body>
