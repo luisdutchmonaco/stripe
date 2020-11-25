@@ -12,14 +12,9 @@ var authToken = '55c17e03896437cf83ccfd2db5b13574';   // Your Auth Token from ww
 var client = new twilio(accountSid, authToken);
 
 
-//const MongoClient = require('mongodb').MongoClient;
-//const dbClient = new MongoClient("mongodb+srv://dmuser:Dutch%232020@cluster0.p9zi9.mongodb.net/orders?retryWrites=true&w=majority", { useNewUrlParser: true });
-//dbClient.connect(err => {
-//  console.log(err);
-//  const collection = dbClient.db("orders").collection("order");
-  // perform actions on the collection object
-//  dbClient.close();
-//});
+const MongoClient = require('mongodb').MongoClient;
+//const
+
 
 
 
@@ -32,44 +27,92 @@ app.engine('html', require('ejs').renderFile);
 app.use(express.static(path.join(__dirname, './views')));
 
 app.get('/dl/:slug', function(req, res) {
-  var filePath = "/views/comic.pdf";
+  var lid = req.params.slug;
+  dbClient = new MongoClient("mongodb+srv://Dutch:Dutch%232020@cluster0.lntaa.mongodb.net/orders?retryWrites=true&w=majority", { useNewUrlParser: true,useUnifiedTopology : true });
+  dbClient.connect(err => {
 
-        fs.readFile(__dirname + filePath , function (err,data){
-          console.log(err);
-            res.contentType("application/pdf");
-            res.send(data);
-        });
+  dbClient.db("orders").collection("download").find({ link: lid}).toArray(function(err, result) {
+    if (err) throw err;
+    if(result.length==0 || result[0].flag==0){
+      console.log("Expired link");
+      res.sendStatus(404);
+      return;
+    }else{
+
+      var filePath = "/views/comic.pdf";
+
+            fs.readFile(__dirname + filePath , function (err,data){
+              //console.log(err);
+                res.contentType("application/pdf");
+                res.send(data);
+            });
+
+    }
+    var myquery = { _id: result[0]._id };
+  var newvalues = { $set: {flag: 0 } };
+  dbClient.db("orders").collection("download").updateOne(myquery, newvalues, function(err, res) {
+    if (err) throw err;
+    console.log("1 document updated");
+    //db.close();
+    dbClient.close();
+  });
+
+
+  });
+
+
+
+});
+
+
+
 
 });
 
 app.post('/charge', (req, res) => {
-    try {
-        stripe.customers.create({
+  var params = {};
+  try{
+    stripe.customers.create({
             name: req.body.name,
             email: req.body.email,
             source: req.body.stripeToken
-        }).then(customer => stripe.charges.create({
+    }).then(customer => stripe.charges.create({
             amount: req.body.amount * 100,
             currency: 'usd',
             customer: customer.id,
-            description: 'Thank you for your generous donation.'
+            description: 'Curiositylandia Order'
         }
+    )).then((sResult) => {
+      console.log(sResult);
+      dbClient = new MongoClient("mongodb+srv://Dutch:Dutch%232020@cluster0.lntaa.mongodb.net/orders?retryWrites=true&w=majority", { useNewUrlParser: true,useUnifiedTopology : true });
+      dbClient.connect(err => {
+        dbClient.db("orders").collection("order").insertOne({ name: req.body.name, email: req.body.email, stripeToken: req.body.stripeToken, oid: sResult.id },
+        function(err, result) {
+                if (err) throw err;
+                //res.json(result);
+                //console.log(result);
+                //res.json({ statusCode : 200});
+        });
+        params = { oid: sResult.id, link:makeid(5), flag: 1};
+        dbClient.db("orders").collection("download").insertOne(params,
+        function(err, result) {
+                if (err) throw err;
+                //res.json(result);
+                //console.log(result);
+                dbClient.close();
+                res.json({ statusCode : 200, oid: params.link });
+        });
+      });
 
-      )).then(() => res.render('complete.html'))
-            .catch(err => console.log(err))
+    }).catch(err => {
+      console.log(err);
+        res.send(err);
 
-            /*
-            dbo.collection("customers").insertOne({ name: "test", email: "luis@tester.com", },
-            function(err, result) {
-                    if (err) throw err;
-                    res.json(result);
-                    db.close();
-            });
-              */
+    });
 
 
     console.log("TWILIO");
-
+/*
     client.messages.create({
       body: 'Thank you for your purchase. Use this one-time link to download your copy of our book [LINK] Enjoy!',
       to: '+528183623411',
@@ -79,7 +122,6 @@ app.post('/charge', (req, res) => {
             console.log(message);
         });
 
-
         const msg = {
           to: 'luis@dutchmonaco.com',
           from: 'hello@curiositylandia.com',
@@ -87,11 +129,31 @@ app.post('/charge', (req, res) => {
           text: 'Curiositylandia - Thank you for your purchase',
           html: 'Thank you for your purchase. Use this one-time link to download your copy of our book [LINK] Enjoy!',
         }
+        */
+        console.log("email: "+req.body.email);
+  const msg = {
+          to: req.body.email,
+          from: 'hello@curiositylandia.com',
+          subject: 'Curiositylandia - Thank you for your purchase',
+          text: 'Curiositylandia - Thank you for your purchase',
+          html: 'Thank you for your purchase. Use this one-time link to download your copy of our book <a href="#">Here</a> Enjoy!',
+  }
   sgMail.send(msg).then(() => { console.log('Email sent') }).catch((error) => { console.error(error) })
 
-    } catch (err) { res.send(err) }
+} catch (err) { console.log(err); res.send(err) }
 })
 
 
 const port = process.env.PORT || 3000
 app.listen(port, () => console.log('Server is running... v1'))
+
+
+function makeid(length) {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
