@@ -65,6 +65,11 @@ button.btn.yellow { background-color: #ffdd17; color:#7a616c; font-family: 'Quic
 button.btn.purple { background-color: #9f97a4; color:#fff; font-family: 'Quicksand', sans-serif; }
 button.btn:hover { background-color: #fff; color: #000;}
 
+
+.fancybox-button--zoom { display:none !important; }
+.fancybox-button--play { display:none !important; }
+.fancybox-button--thumbs { display:none !important; }
+
 .centered { text-align: center;}
 .bg { background-color: #ededed; }
 .bg-white { background-color: #fbfbfb;}
