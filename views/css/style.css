@@ -6,15 +6,20 @@
     font-style: normal;
 
 }
-body { font-family: 'kgneatlyprinted'; font-size: 22px; color: #333; font-weight: 100; background: url(../img/bck.jpg) top center #fbfbfb; margin: 0;}
+body { font-family: 'kgneatlyprinted'; font-size: 22px; color: #333; font-weight: 100; background:#fbfbfb; margin: 0;}
 h1 { font-size: 45px; font-weight: 100; margin-bottom: 25px;}
 h2 { font-size: 40px; font-weight: 100; margin-bottom: 25px;}
 h3 { font-size: 35px; font-weight: 100; line-height: 45px; margin-bottom: 25px;}
 h3.subtitle { color:#9ca2bd; font-family: 'Schoolbell', cursive; font-size: 54px; font-weight: 100; margin-bottom:30px;}
+
+header { z-index: 2; position: relative; }
+main { z-index: 2; position: relative;}
+footer{ z-index: 2; position: relative; }
+
 header .topbar { padding: 10px; background-color: #f6f6f6;}
 header .menu { position: absolute; top: 21px; right: 20px;width: 42px; height: 25px; z-index: 10000; padding:5px; text-align: center;}
 header .menu a { display: block; width: 25px; height: 20px; }
-header .menu a.active span.top { transform: rotate(45deg); top:10px; }
+header .menu a.active span.top { transform: rotate(45deg); top:10px; background-color: #9F97A4;}
 header .menu a.active span.bottom { transform: rotate(-45deg); top: 10px;}
 header .menu span { width: 30px; height: 2px; position: absolute; background-color: #a0a5c0; display: block; max-width: 30px;}
 header .menu span.top { top:5px; }
@@ -45,14 +50,19 @@ main section.quotes .holder .quotes { background-color:#f7f5f7; padding-top: 30p
 main section.quotes .holder .quotes h3 { color:#738584; }
 main section.quotes .holder .quotes p { color:#4a5350; }
 
-footer { background-color: #feeca7; min-height: 250px; }
-footer .row { }
+footer {  }
+footer .row.fluid { min-height: 200px; }
 footer .row p { font-size: 20px; color:#7a748b;  margin-top: 10px;}
 footer .multi { background-color: #f1d4b8; border-top:#000 solid 2px; height: 20px;  border-bottom:#000 solid 2px; height: 20px;}
 
 * { box-sizing: border-box;}
 a { text-decoration: none; color: #333; display: inline-block;}
-.btn { min-width: 140px; text-align: center; padding: 6px 3px; color: #fff; margin-left: 5px; margin-right: 5px; border-radius: 6px; font-size: 22px; text-transform: uppercase;}
+.btn {
+  min-width: 140px; text-align: center; padding: 6px 3px; color: #fff; margin-left: 5px; margin-right: 5px;
+  border-radius: 6px; font-size: 22px; text-transform: uppercase;
+  transition: all .15s ease-out;
+
+}
 .btn.yellow:hover { background-color: #9f97a4; color:#fff; }
 
 .btn.yellow { background-color: #ffdd17; color:#7a616c; font-family: 'Quicksand', sans-serif; }
@@ -75,6 +85,7 @@ button.btn:hover { background-color: #fff; color: #000;}
 .bg-white { background-color: #fbfbfb;}
 .bg-gray { background-color: #ccc; }
 .bg-lightgreen { background-color: #e2f7ea; }
+.bg-yellow { background-color: #feeca7; }
 .row { max-width: 1200px; margin: auto; font-size: 0;}
 .row.fluid { width: 100%; max-width: 100%;}
 .row .col { font-size: 22px; line-height: 25px;}
@@ -97,12 +108,12 @@ padding-bottom: 50px;
  background-color: #f7f5f7;
 }
 .nav { position: fixed; top: 0; bottom: 0;right: 0px; width: 100%; background-color: #cfd3df; box-shadow: 5px 5px 40px rgba(0,0,0,.35); z-index: 10; display: none;}
-.nav h2 { text-align: center; font-size: 54px; font-family: 'Quicksand', sans-serif; font-weight: 700;text-transform: uppercase; color: #fff; margin-top: 100px; margin-bottom: 50px;}
+.nav h2 { text-align: center; font-size: 50px; font-family: 'kgneatlyprinted'; font-weight: 700;text-transform: uppercase; color: #9F97A4; margin-top: 100px; margin-bottom: 50px;}
 .nav.open { display: block; }
 .nav ul { margin-top: 30px; list-style: none; padding: 0; max-width: 750px; margin: auto;}
 .nav ul li { margin-bottom: 25px; font-size: 18px; color: #444; }
 .nav ul li.indent { padding-left: 10px;}
-.nav ul li a {font-family: 'Quicksand', sans-serif;font-size: 40px; color: #fff; font-weight: 700; background: url(../img/white-star.png) left center no-repeat; background-size: 25px auto; padding-left: 35px;}
+.nav ul li a {font-family: 'Quicksand', sans-serif;font-size: 36px; color: #9F97A4; font-weight: 700; background: url(../img/white-star.png) left center no-repeat; background-size: 25px auto; padding-left: 35px;}
 .nav ul li.sub a {background: url(../img/blue-star.png) left center no-repeat; background-size: 18px auto; margin-left: 35px; padding-left: 25px;}
 
 .nav ul li a:hover { color: #758398;}

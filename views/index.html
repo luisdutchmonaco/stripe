@@ -71,163 +71,180 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </ul>
 </div>
+<style>
+.background { position: relative; height: 100vh; width: 100%; background: url(../img/bck-off.png) top center; z-index: 1; position: fixed; top: 0; left:0;}
+.background .stars.on {  position: fixed; top:0; left:0; height: 100vh; width: 100%; background: url(../img/bck-on.png) top center; opacity: 0; animation: pulse 2s infinite ease;}
+@keyframes pulse {
+  0%   { opacity:1; }
+   50%  { opacity:0; }
+   100% { opacity:1; }
+}
+</style>
 <div id="app">
-<header>
-<div class="row fluid topbar">
-  <div class="menu">
-      <a href="#" class="onClickNav"><span class="top"></span><span class="bottom"></span></a>
+  <div class="background">
+    <div class="stars on"></div>
   </div>
-  <img src="img/logo.svg" class="responsive logo" style="max-width:280px;" />
-</div>
-
-<div class="hero">
-  <div class="row half vertical">
-    <div class="col">
-      <div class="holder">
-        <img src="img/wicsn-logo.svg" class="responsive" />
-        <br />
-          <a href="javascript:void(0)" class="btn onClickModal yellow">BUY BOOK</a>  <a href="#" class="btn purple">DOWNLOAD</a>
-      </div>
-
-    </div>
-    <div class="col"><img src="img/header.png" class="responsive"/><h2>Out now!</h2></div>
+  <header>
+  <div class="row fluid topbar">
+    <div class="menu"><a href="#" class="onClickNav"><span class="top"></span><span class="bottom"></span></a></div>
+    <img src="img/logo.svg" class="responsive logo" style="max-width:280px;" />
   </div>
-</div>
-</header>
-<main>
-  <section class="block intro">
+  <div class="hero">
     <div class="row half vertical">
       <div class="col">
         <div class="holder">
-          <h3 class="subtitle centered">Our book</h3>
-          <p class="centered">WOW, I Can See Clearly Now! is a book about my eyes and all the steps my parents and I are taking to correct my eyesight.<br /><br />
-            I am learning to listen to my body and the importance of every single one of its parts.<br /><br />
-            When something doesn’t feel right, the first step is to talk about it and find ways to feel better! For example, when words on the chalkboard at school
-            were looking a bit blurry, telling my parents was the perfect idea. They took me to the eye doctor and now I have eyeglasses that help me see better!</p>
+          <img src="img/wicsn-logo.svg" class="responsive" />
+          <br />
+            <a href="javascript:void(0)" class="btn onClickModal yellow">BUY BOOK</a>  <a href="#" class="btn purple">DOWNLOAD</a>
         </div>
-
       </div>
-      <div class="col">
-        <div class="holder">
-          <img src="img/examen-vista.png" class="responsive"/>
-        </div>
-
-      </div>
+      <div class="col"><img src="img/header.png" class="responsive"/><h2>Out now!</h2></div>
     </div>
-  </section>
-
-
-    <section class="block preview">
-      <div class="row">
-        <div class="col">
-          <div class="holder">
-        <h3 class="centered subtitle">A Little Preview for You and Your Little One</h3>
-        <div class="slider bg-lightgreen">
-          <div class="swiper-container images">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><a href="img/prev001.png" data-fancybox="gallery"><img src="img/prev001.png" class="responsive"/></a></div>
-              <div class="swiper-slide"><a href="img/prev002.png" data-fancybox="gallery"><img src="img/prev002.png" class="responsive"/></a></div>
-              <div class="swiper-slide"><a href="img/prev003.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
-              <div class="swiper-slide"><a href="img/prev003.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
-              <div class="swiper-slide"><a href="img/prev003.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
-            </div>
-
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-        </div>
-
-
-        <div class="actions">
-          <a href="#" class="btn yellow">BUY BOOK</a>  <a href="#" class="btn purple">DOWNLOAD</a>
-        </div>
-      </div>
-        </div>
-      </div>
-
-    </section>
-
-
-    <section class="block quotes">
+  </div>
+  </header>
+  <main>
+    <section class="block intro">
       <div class="row half vertical">
-        <div class="col"><div class="holder"><img src="img/mama-lelu.png" class="responsive"/></div></div>
         <div class="col">
           <div class="holder">
-          <center>
-            <img src="img/glasses.png" style="max-width:100px; margin-bottom:30px;" />
-          </center>
-          <div class="swiper-container quotes">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <h3 class="subtitle centered">Absolutely Beautiful!</h3>
-                <p class="centered">My children and I bonded over the story of beautiful Lelu and her quest find how to correct the issues with her vision.</p>
-                <p class="centered">- Happy Mom</p>
+            <h3 class="subtitle centered">Our book</h3>
+            <p class="centered">WOW, I Can See Clearly Now! is a book about my eyes and all the steps my parents and I are taking to correct my eyesight.<br /><br />
+              I am learning to listen to my body and the importance of every single one of its parts.<br /><br />
+              When something doesn’t feel right, the first step is to talk about it and find ways to feel better! For example, when words on the chalkboard at school
+              were looking a bit blurry, telling my parents was the perfect idea. They took me to the eye doctor and now I have eyeglasses that help me see better!</p>
+          </div>
+
+        </div>
+        <div class="col">
+          <div class="holder">
+            <img src="img/examen-vista.png" class="responsive"/>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+      <section class="block preview">
+        <div class="row">
+          <div class="col">
+            <div class="holder">
+          <h3 class="centered subtitle">A Little Preview for You and Your Little One</h3>
+          <div class="slider bg-lightgreen">
+            <div class="swiper-container images">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="img/prev001.png" data-fancybox="gallery"><img src="img/prev001.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="img/prev002.png" data-fancybox="gallery"><img src="img/prev002.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="img/prev003.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="img/prev003.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="img/prev003.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
               </div>
-              <div class="swiper-slide">
-                <h3 class="subtitle centered">Absolutely Beautiful!</h3>
-                <p class="centered">Innocent, easy to read and beautifully written. This is a story that will stay with us over the years. Recommended!</p>
-                <p class="centered">- Always Smiling Fam</p>
+
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+
+
+          <div class="actions">
+            <a href="#" class="btn yellow">BUY BOOK</a>  <a href="#" class="btn purple">DOWNLOAD</a>
+          </div>
+        </div>
+          </div>
+        </div>
+
+      </section>
+
+
+      <section class="block quotes">
+        <div class="row half vertical">
+          <div class="col"><div class="holder"><img src="img/mama-lelu.png" class="responsive"/></div></div>
+          <div class="col">
+            <div class="holder">
+            <center>
+              <img src="img/glasses.png" style="max-width:100px; margin-bottom:30px;" />
+            </center>
+            <div class="swiper-container quotes">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <h3 class="subtitle centered">Absolutely Beautiful!</h3>
+                  <p class="centered">My children and I bonded over the story of beautiful Lelu and her quest find how to correct the issues with her vision.</p>
+                  <p class="centered">- Happy Mom</p>
+                </div>
+                <div class="swiper-slide">
+                  <h3 class="subtitle centered">Absolutely Beautiful!</h3>
+                  <p class="centered">Innocent, easy to read and beautifully written. This is a story that will stay with us over the years. Recommended!</p>
+                  <p class="centered">- Always Smiling Fam</p>
+                </div>
+                <div class="swiper-slide">
+                  <h3 class="subtitle centered">Absolutely Beautiful!</h3>
+                  <p class="centered">One of those reads that any young family should have. Perfect for our collection</p>
+                  <p class="centered">- Nana</p>
+                </div>
+
               </div>
-              <div class="swiper-slide">
-                <h3 class="subtitle centered">Absolutely Beautiful!</h3>
-                <p class="centered">One of those reads that any young family should have. Perfect for our collection</p>
-                <p class="centered">- Nana</p>
-              </div>
+
+              <div class="swiper-pagination"></div>
 
             </div>
+          </div>
+          </div>
+        </div>
 
-            <div class="swiper-pagination"></div>
+      </section>
+
+
+      <section class="block coloring-sheets">
+        <h3 class="centered subtitle">Super Fun Coloring Sheets <img src="img/pencil.png" class="responsive" /></h3>
+        <div class="row fluid bg-green">
+          <div class="row">
+            <div class="holder">
+
+
+        <div class="swiper-container coloring">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="pdf/color1.pdf" target="_blank"><img src="img/s001.png" class="responsive"/><span class="btn purple">Download</span></a></div>
+            <div class="swiper-slide"><a href="pdf/color2.pdf" target="_blank"><img src="img/s002.png" class="responsive"/><span class="btn purple">Download</span></a></div>
+            <div class="swiper-slide"><a href="pdf/color3.pdf" target="_blank"><img src="img/s003.png" class="responsive"/><span class="btn purple">Download</span></a></div>
+            <div class="swiper-slide"><a href="pdf/color4.pdf" target="_blank"><img src="img/s004.png" class="responsive"/><span class="btn purple">Download</span></a></div>
+            <div class="swiper-slide"><a href="pdf/color5.pdf" target="_blank"><img src="img/s005.png" class="responsive"/><span class="btn purple">Download</span></a></div>
+          </div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+
+      </div>
 
           </div>
         </div>
-        </div>
-      </div>
 
-    </section>
+      </section>
 
 
-    <section class="block coloring-sheets">
-      <h3 class="centered subtitle">Super Fun Coloring Sheets <img src="img/pencil.png" class="responsive" /></h3>
-      <div class="row fluid bg-green">
-        <div class="row">
-          <div class="holder">
-
-
-      <div class="swiper-container coloring">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><a href="pdf/color1.pdf" target="_blank"><img src="img/s001.png" class="responsive"/><span class="btn purple">Download</span></a></div>
-          <div class="swiper-slide"><a href="pdf/color2.pdf" target="_blank"><img src="img/s002.png" class="responsive"/><span class="btn purple">Download</span></a></div>
-          <div class="swiper-slide"><a href="pdf/color3.pdf" target="_blank"><img src="img/s003.png" class="responsive"/><span class="btn purple">Download</span></a></div>
-          <div class="swiper-slide"><a href="pdf/color4.pdf" target="_blank"><img src="img/s004.png" class="responsive"/><span class="btn purple">Download</span></a></div>
-          <div class="swiper-slide"><a href="pdf/color5.pdf" target="_blank"><img src="img/s005.png" class="responsive"/><span class="btn purple">Download</span></a></div>
-        </div>
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-
-
-    </div>
-
-        </div>
-      </div>
-
-    </section>
-
-
-</main>
-<footer>
-  <div class="row fluid bg-white">
-    <div class="row" align="right">
+  </main>
+  <footer>
+    <div class="row books" align="right">
       <img src="img/books.png" style="max-width:150px; margin-bottom:-10px;" />
     </div>
-  </div>
-  <div class="multi"></div>
-  <div class="row">
-    <p>(C) Curiositylandia. ALL RIGHTS RESERVED</p>
-  </div>
-</footer>
+    <div class="row fluid bg-yellow">
+
+
+    <div class="multi"></div>
+    <div class="row ">
+      <p>(C) Curiositylandia. ALL RIGHTS RESERVED</p>
+    </div>
+    </div>
+  </footer>
+
+
+
 </div>
+
+
+
+
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
 
@@ -309,10 +326,13 @@ $(document).keyup(function(e) {
   }
 });
 
+
+
 });
 </script>
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="app.js"></script>
+
 </body>
 </html>
