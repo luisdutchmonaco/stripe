@@ -84,21 +84,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="background">
     <div class="stars on"></div>
   </div>
-  <header>
-  <div class="row fluid topbar">
+  <div id="topbar" class="row fluid topbar">
     <div class="menu"><a href="#" class="onClickNav"><span class="top"></span><span class="bottom"></span></a></div>
     <img src="img/logo.svg" class="responsive logo" style="max-width:280px;" />
   </div>
+  <header>
+
   <div class="hero">
     <div class="row half vertical">
       <div class="col">
         <div class="holder">
           <img src="img/wicsn-logo.svg" class="responsive" />
           <br />
-            <a href="javascript:void(0)" class="btn onClickModal yellow">BUY BOOK</a>  <a href="#" class="btn purple">DOWNLOAD</a>
+          <div class="row actions">
+            <div class="col">
+              <a href="javascript:void(0)" class="btn onClickModal yellow">BUY BOOK</a>
+              <p>Hardcover $11.99 + $2.99 S&H</p>
+            </div>
+            <div class="col">
+              <a href="#" class="btn purple">DOWNLOAD</a>
+              <p>eBook or PDF $5.99</p>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="col"><img src="img/header.png" class="responsive"/><h2>Out now!</h2></div>
+      <div class="col">
+        <a href="#" class="badge top"><span class="title">Hardcover</span><span class="price">$11.99</span><span class="extra">+S&H</span></a>
+        <a href="#" class="badge bottom"><span class="title">Digital Download</span><span class="price">$5.99</span><span class="extra">In eBook or PDF format</span></a>
+        <img src="img/header.png" class="responsive"/><h2>Out now!</h2>
+      </div>
     </div>
   </div>
   </header>
@@ -126,28 +141,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
       <section class="block preview">
-        <div class="row">
+        <div class="row fluid">
           <div class="col">
             <div class="holder">
           <h3 class="centered subtitle">A Little Preview for You and Your Little One</h3>
-          <div class="slider bg-lightgreen">
+        <div class="row fluid bg-lightgreen">
+          <div class="slider ">
+            <div class="preview sw-prev"><span class="on"></span><span class="off"></span></div>
+            <div class="preview sw-next"><span class="on"></span><span class="off"></span></div>
             <div class="swiper-container images">
               <div class="swiper-wrapper">
                 <div class="swiper-slide"><a href="img/prev001.png" data-fancybox="gallery"><img src="img/prev001.png" class="responsive"/></a></div>
                 <div class="swiper-slide"><a href="img/prev002.png" data-fancybox="gallery"><img src="img/prev002.png" class="responsive"/></a></div>
                 <div class="swiper-slide"><a href="img/prev003.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
-                <div class="swiper-slide"><a href="img/prev003.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
-                <div class="swiper-slide"><a href="img/prev003.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="img/prev004.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="img/prev005.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
               </div>
-
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
             </div>
           </div>
-
-
-          <div class="actions">
-            <a href="#" class="btn yellow">BUY BOOK</a>  <a href="#" class="btn purple">DOWNLOAD</a>
+        </div>
+          <div class="row half actions">
+            <div class="col">
+              <a href="javascript:void(0)" class="btn onClickModal yellow">BUY BOOK</a>
+              <p>Hardcover $11.99 + $2.99 S&H</p>
+            </div>
+            <div class="col">
+              <a href="#" class="btn purple">DOWNLOAD</a>
+              <p>eBook or PDF $5.99</p>
+            </div>
           </div>
         </div>
           </div>
@@ -199,8 +220,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="row fluid bg-green">
           <div class="row">
             <div class="holder">
-              <div class="coloring sw-prev"></div>
-              <div class=" coloring sw-next"></div>
+              <div class="coloring sw-prev"><span class="on"></span><span class="off"></span></div>
+              <div class=" coloring sw-next"><span class="on"></span><span class="off"></span></div>
 
         <div class="swiper-container coloring">
           <div class="swiper-wrapper">
@@ -253,7 +274,10 @@ var mySwiper = new Swiper('.swiper-container.images', {
   loop: true,
   slidesPerView : 3,
   spaceBetween : 15,
-  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
+  navigation: {
+    nextEl: '.preview.sw-next',
+    prevEl: '.preview.sw-prev',
+  },
   breakpoints: {
     800: { slidesPerView: 3 },
     640: { slidesPerView: 1.1 },
@@ -267,6 +291,10 @@ var mySwiper2 = new Swiper('.swiper-container.coloring', {
   loop: true,
   slidesPerView : 3,
   spaceBetween : 15,
+  navigation: {
+    nextEl: '.coloring.sw-next',
+    prevEl: '.coloring.sw-prev',
+  },
   breakpoints: {
     800: { slidesPerView: 3 },
     640: { slidesPerView: 1.1 },
