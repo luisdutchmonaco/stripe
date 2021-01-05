@@ -16,13 +16,13 @@ header { z-index: 2; position: relative; }
 main { z-index: 2; position: relative;}
 footer{ z-index: 2; position: relative; }
 
-#topbar { padding: 10px; top:0; background-color: #f9fcf9; box-shadow: 0px 0px 15px rgba(0,0,0,.25); padding-top: 20px; padding-bottom: 20px; position: fixed; z-index: 10}
+#topbar { padding: 10px; top:0; background-color: #f9fcf9; box-shadow: 0px 0px 15px rgba(0,0,0,.25); padding-top: 7px; padding-bottom: 7px; position: fixed; z-index: 10}
 
-#topbar .menu { position: absolute; top: 21px; right: 20px;width: 42px; height: 25px; z-index: 10000; padding:5px; text-align: center;}
+#topbar .menu { position: absolute; top: 30px; right: 20px;width: 42px; height: 25px; z-index: 10000; padding:5px; text-align: center;}
 #topbar .menu a { display: block; width: 25px; height: 20px; }
 #topbar .menu a.active span.top { transform: rotate(45deg); top:10px; background-color: #9F97A4;}
 #topbar .menu a.active span.bottom { transform: rotate(-45deg); top: 10px;}
-#topbar .menu span { width: 30px; height: 2px; position: absolute; background-color: #a0a5c0; display: block; max-width: 30px;}
+#topbar .menu span { width: 30px; height: 2px; position: absolute; background-color: #a0a5c0; display: block; max-width: 30px; transition: all .15s ease-out;}
 #topbar .menu span.top { top:5px; }
 #topbar .menu span.bottom { top:15px;}
 
@@ -158,16 +158,18 @@ margin: auto;
 padding-bottom: 50px;
  background-color: #f7f5f7;
 }
-.nav { position: fixed; top: 0; bottom: 0;right: 0px; width: 100%; background-color: #cfd3df; box-shadow: 5px 5px 40px rgba(0,0,0,.35); z-index: 10; display: none;}
-.nav h2 { text-align: center; font-size: 50px; font-family: 'kgneatlyprinted'; font-weight: 700;text-transform: uppercase; color: #9F97A4; margin-top: 100px; margin-bottom: 50px;}
+.nav { position: fixed; top: 0; bottom: 0;right: 0px; width: 100%; background-color: #f7f5f7; box-shadow: 5px 5px 40px rgba(0,0,0,.35); z-index: 10; display: none;}
+.nav h2 { text-align: center; font-size: 50px; font-family: 'kgneatlyprinted'; font-weight: 700;text-transform: uppercase; color: #9F97A4; margin-top: 120px; margin-bottom: 50px;}
 .nav.open { display: block; }
-.nav ul { margin-top: 30px; list-style: none; padding: 0; max-width: 750px; margin: auto;}
-.nav ul li { margin-bottom: 25px; font-size: 18px; color: #444; }
+.nav ul { margin-top: 20px; list-style: none; padding: 0;  margin: auto;}
+.nav ul li { margin-bottom: 5px; font-size: 18px; color: #444; transition: background-color .15s ease-out; }
+.nav ul li .holder { width: 100%; margin: auto; }
+.nav ul li:hover { background-color: #f0edff;}
+.nav ul li:hover a { color:#7a748b; background: url(../img/blue-star.png) left center no-repeat; background-size: 25px auto; }
+.nav ul li.sub:hover a { background: url(../img/blue-star.png) left center no-repeat; background-size: 18px auto;  }
 .nav ul li.indent { padding-left: 10px;}
-.nav ul li a {font-family: 'Quicksand', sans-serif;font-size: 36px; color: #9F97A4; font-weight: 700; background: url(../img/white-star.png) left center no-repeat; background-size: 25px auto; padding-left: 35px;}
-.nav ul li.sub a {background: url(../img/blue-star.png) left center no-repeat; background-size: 18px auto; margin-left: 35px; padding-left: 25px;}
-
-.nav ul li a:hover { color: #758398;}
+.nav ul li a {font-family: 'Quicksand', sans-serif;font-size: 36px; color: #9F97A4; font-weight: 700; background: url(../img/white-star.png) left center no-repeat; background-size: 25px auto; padding-left: 35px; transition: color .15s ease-out;}
+.nav ul li.sub a {background: url(../img/white-star.png) left center no-repeat; background-size: 18px auto; margin-left: 35px; padding-left: 25px;}
 .nav ul li.last { margin-top: 30px;}
 .nav ul li.last a { font-size: 16px; font-weight: 100; }
 
@@ -179,7 +181,14 @@ header .hero { text-align: center; }
 header .lang { display: none;}
 header .menu { display: block;}
 header p { display: none;}
-.nav { width: 70%;}
+.nav { width: 100%;}
+.nav h2 { font-size: 35px; margin-bottom: 25px;}
+.nav ul li a  { font-size: 21px; }
+.nav ul li .holder  { max-width: 400px;}
+.nav ul li a { background-size:18px auto; }
+.nav ul li:hover a { background-size:18px auto; }
+.nav ul li.sub a { background-size:14px auto; }
+.nav ul li.sub:hover a { background-size:14px auto; }
 a.btn { min-width: 150px;}
 header h1 { font-size: 30px;}
 .swiper-button-next { display: none;}
