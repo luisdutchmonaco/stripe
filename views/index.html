@@ -4,9 +4,24 @@
   <meta charset = "utf-8">
   <title>Curiositylandia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curiositylandia | WOW, I Can See Clearly Now! | Books for Children</title>
+  <meta name="title" content="Curiositylandia | WOW, I Can See Clearly Now! | Books for Children">
+  <meta name="description" content="WOW, I Can See Clearly Now! is a book about my eyes and all the steps my parents and I are taking to correct my eyesight.">
 
-  <meta name = "description" content = "Curiositylandia">
-  <meta name = "author" content = "Curiositylandia">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://curiositylandia.com/wow-i-can-see-clearly-now">
+  <meta property="og:title" content="Curiositylandia | WOW, I Can See Clearly Now! | Books for Children">
+  <meta property="og:description" content="WOW, I Can See Clearly Now! is a book about my eyes and all the steps my parents and I are taking to correct my eyesight.">
+  <meta property="og:image" content="https://curiositylandia.com/share-wow.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://curiositylandia.com/wow-i-can-see-clearly-now">
+  <meta property="twitter:title" content="Curiositylandia | WOW, I Can See Clearly Now! | Books for Children">
+  <meta property="twitter:description" content="WOW, I Can See Clearly Now! is a book about my eyes and all the steps my parents and I are taking to correct my eyesight.">
+  <meta property="twitter:image" content="https://curiositylandia.com/share-wow.jpg">
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -153,8 +168,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="swiper-slide"><a href="img/prev001.png" data-fancybox="gallery"><img src="img/prev001.png" class="responsive"/></a></div>
                 <div class="swiper-slide"><a href="img/prev002.png" data-fancybox="gallery"><img src="img/prev002.png" class="responsive"/></a></div>
                 <div class="swiper-slide"><a href="img/prev003.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
-                <div class="swiper-slide"><a href="img/prev004.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
-                <div class="swiper-slide"><a href="img/prev005.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="img/prev004.png" data-fancybox="gallery"><img src="img/prev004.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="img/prev005.png" data-fancybox="gallery"><img src="img/prev005.png" class="responsive"/></a></div>
               </div>
             </div>
           </div>
@@ -224,11 +239,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="swiper-container coloring">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><a href="pdf/color1.pdf" target="_blank"><img src="img/s001.png" class="responsive"/><span class="btn purple">Download</span></a></div>
-            <div class="swiper-slide"><a href="pdf/color2.pdf" target="_blank"><img src="img/s002.png" class="responsive"/><span class="btn purple">Download</span></a></div>
-            <div class="swiper-slide"><a href="pdf/color3.pdf" target="_blank"><img src="img/s003.png" class="responsive"/><span class="btn purple">Download</span></a></div>
-            <div class="swiper-slide"><a href="pdf/color4.pdf" target="_blank"><img src="img/s004.png" class="responsive"/><span class="btn purple">Download</span></a></div>
-            <div class="swiper-slide"><a href="pdf/color5.pdf" target="_blank"><img src="img/s005.png" class="responsive"/><span class="btn purple">Download</span></a></div>
+            <div class="swiper-slide"><a href="pdf/color1.pdf" target="_blank" class="border"><img src="img/s001.png" class="responsive"/><span class="btn purple">Download</span></a></div>
+            <div class="swiper-slide"><a href="pdf/color2.pdf" target="_blank" class="border"><img src="img/s002.png" class="responsive"/><span class="btn purple">Download</span></a></div>
+            <div class="swiper-slide"><a href="pdf/color3.pdf" target="_blank" class="border"><img src="img/s003.png" class="responsive"/><span class="btn purple">Download</span></a></div>
+            <div class="swiper-slide"><a href="pdf/color4.pdf" target="_blank" class="border"><img src="img/s004.png" class="responsive"/><span class="btn purple">Download</span></a></div>
+            <div class="swiper-slide"><a href="pdf/color5.pdf" target="_blank" class="border"><img src="img/s005.png" class="responsive"/><span class="btn purple">Download</span></a></div>
           </div>
 
 
@@ -329,13 +344,12 @@ var mySwiper2 = new Swiper('.swiper-container.coloring', {
 var swQuotes = new Swiper('.swiper-container.quotes', {
   loop: true,
   effect: 'fade',
-  fadeEffect: {
-    crossFade: true
-  },
+  fadeEffect: { crossFade: true },
+  mousewheel: { invert: true },
   autoplay: { delay: 8000 },
   slidesPerView : 1,
   spaceBetween : 0,
-  pagination: { el: '.swiper-pagination' },
+  pagination: { el: '.swiper-pagination',clickable : true },
 });
 
 $(document).keyup(function(e) {
@@ -384,6 +398,8 @@ $(document).keyup(function(e) {
 
 $(".background").height($(document).height());
 $(".background .stars").height($(document).height());
+$.fancybox.defaults.animationEffect = "fade";
+
 
 
 
