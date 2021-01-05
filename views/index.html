@@ -72,7 +72,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <style>
 .background { position: absolute; min-height: 100%; bottom:0; width: 100%; background: url(../img/bck-off.png) top center; z-index: 1; top: 0; left:0; background-size: 50% auto; opacity: .6; }
-.background .stars.on {  position: absolute; top:0; bottom: 0;left:0; min-height: 100%; width: 100%; background: url(../img/bck-on.png) top center; opacity: 0; animation: pulse 2s infinite ease; background-size: 50% auto; opacity: .6; }
+.background .stars.on {  position: absolute; top:0; bottom: 0;left:0; min-height: 100%; width: 100%; background: url(../img/bck-on.png) top center; opacity: 0; animation: pulse 4s infinite ease; background-size: 50% auto; opacity: .6; }
 @keyframes pulse {
   0%   { opacity:1; }
    50%  { opacity:0; }
@@ -341,7 +341,7 @@ var swQuotes = new Swiper('.swiper-container.quotes', {
 $(document).keyup(function(e) {
   if (e.keyCode === 27){
     $(".menu a").removeClass("active");
-    $(".nav").removeClass("open");
+    $(".nav").removeClass("open").fadeOut();
   }
 })
 
@@ -355,13 +355,14 @@ $(document).ready(function(){
 
   $("a.onClickNav").click(function(){
     $(this).toggleClass("active");
-    $(".nav").toggleClass("open");
+    if($(".nav").is(":visible")){ $(".nav").removeClass("open").fadeOut(); }else { $(".nav").addClass("open").fadeIn(); }
+
   });
 
 $("#app").click(function(e){
-  if($(e.target).hasClass("onClickNav")){ return; }
-  $(".menu a").removeClass("active");
-  $(".nav").removeClass("open");
+  //if($(e.target).hasClass("onClickNav")){ return; }
+  //$(".menu a").removeClass("active");
+  //$(".nav").removeClass("open").fadeOut();
 });
 
 $("a.close").click(function(){
