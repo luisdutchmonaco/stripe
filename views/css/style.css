@@ -33,14 +33,15 @@ header p { margin: 0; padding: 0px 20px; font-size: 16px; margin-bottom: 20px;}
 header .hero { min-height: 400px; color: #fff; padding-top: 80px; padding-bottom: 30px; text-align: center;}
 header .hero p { color: #9f97a4; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 100; margin-bottom: 0px;}
 header .hero .row .col { position: relative;}
+header .hero .row .col:first-child img { max-width: 90%; margin: auto; }
 header .hero .actions { max-width: 480px; }
 header .hero .actions .col { min-height: auto;}
-header .hero h2 { font-size: 40px; color:#ffdd17; text-align: center; font-family: 'Schoolbell', cursive; font-family: 'Quicksand', sans-serif; font-weight: 700;}
+header .hero h2 { font-size: 40px; color:#ffdd17; text-align: center; font-family: 'Quicksand', sans-serif; font-weight: 700;}
 header .hero a.badge { background-color: #ffdd17; color:#835c6a; font-size: 12px; line-height: 12px;width: 110px; height: 110px; position: absolute; top: 0px; right: -45px; display: block; border-radius: 100px;}
-header .hero a.badge span { display: block;}
-header .hero a.badge span.title { font-size: 22px; margin-top:12px; line-height: 16px; font-weight: 500;}
-header .hero a.badge span.price { font-size: 26px; margin-top:10px; font-weight: 700;}
-header .hero a.badge span.extra { font-size: 16px; line-height: 16px;padding-top: 6px; max-width: 80px; margin: auto; font-weight: 500;}
+header .hero a.badge span { display: block; font-family: 'Quicksand', sans-serif;}
+header .hero a.badge span.title { font-size: 17px; margin-top:18px; line-height: 16px; font-weight: 500;}
+header .hero a.badge span.price { font-size: 22px; margin-top:10px; font-weight: 700;}
+header .hero a.badge span.extra { font-size: 14px; line-height: 16px;padding-top: 6px; max-width: 80px; margin: auto; font-weight: 500;}
 header .hero a.badge.top { right: 45px; top: -40px}
 header .hero a.badge.top span.title { margin-top: 30px;}
 header .hero a.badge.bottom {}
@@ -76,11 +77,13 @@ main section.coloring-sheets .swiper-slide span.btn { position: absolute; top:50
 main section.coloring-sheets .swiper-slide a:hover span.btn { opacity: 1;}
 main section .holder { padding: 25px;}
 
-main section.intro p { max-width: 510px; margin: auto; font-size: 24px; line-height: 32px;}
+main section.intro p { max-width: 510px; margin: auto; font-size: 24px; line-height: 30px;}
 
 main section.preview .holder { padding-left:0px; padding-right: 0px; }
 main section.preview .slider { padding:30px; position: relative; max-width: 1200px; margin: auto !important;}
-main section.preview .swiper-slide a { border: #ffdd17 solid 2px;}
+main section.preview .swiper-slide a { border: #ffdd17 solid 2px; position: relative;}
+main section.preview .swiper-slide a::after { content: ""; width: 100%; height: 100%; background-color: rgba(159,151,164,.50); top:0; left:0; position: absolute; opacity: 0; transition: opacity .15s ease-out; }
+main section.preview .swiper-slide a:hover::after {opacity: 1; }
 main section.preview .slider .sw-prev { outline: none;width: 34px; height: 50px; position: absolute; top:50%; margin-top: -25px; left:-30px;  }
 main section.preview .slider .sw-prev:hover { cursor: pointer; }
 main section.preview .slider .sw-prev span { width: 34px; height: 50px; display: block; position: absolute; transition: all .15s ease-out;  }
@@ -105,10 +108,13 @@ main section.quotes .holder .quotes { background-color:#f7f5f7; padding-top: 30p
 main section.quotes .holder .quotes h3 { color:#9f97a4; padding-left: 15px; padding-right: 15px; }
 main section.quotes .holder .quotes p { color:#4a5350; padding-left: 15px; padding-right: 15px;}
 
-footer {  }
+footer { font-size: 20px; color:#7a748b; }
 footer .row.fluid { min-height: 200px; }
-footer .row p { font-size: 20px; color:#7a748b;  margin-top: 10px; line-height: 22px;}
+footer .row p { line-height: 22px;}
 footer .multi { background-color: #f1d4b8; border-top:#000 solid 2px; height: 20px;  border-bottom:#000 solid 2px; height: 20px;}
+footer .row .col { min-height: auto; padding-top: 10px; }
+footer input { width: 300px; border-radius: 6px;height: 50px; text-indent: 15px; border:#9f97a4 solid 2px;}
+footer input.error { border:#e74c3c solid 2px;  }
 
 * { box-sizing: border-box;}
 a { text-decoration: none; color: #333; display: inline-block;}
@@ -144,6 +150,7 @@ button.btn:hover { background-color: #fff; color: #000;}
 .row { max-width: 1200px; margin: auto; font-size: 0;}
 .row.fluid { width: 100%; max-width: 100%;}
 .row .col { font-size: 22px; line-height: 25px;}
+.row .col.aright { text-align: right; }
 .row.half .col { width: 50%; display: inline-block; vertical-align: top; min-height: 250px;}
 .row.vertical .col { vertical-align: middle; }
 img.responsive { width: 100%; height: auto; vertical-align: baseline; }

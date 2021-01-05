@@ -25,14 +25,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Schoolbell&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -125,7 +123,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="col">
         <a href="#" class="badge top"><span class="title">Hardcover</span><span class="price">$11.99</span><span class="extra">+S&H</span></a>
-        <a href="#" class="badge bottom"><span class="title">Digital Download</span><span class="price">$5.99</span><span class="extra">In eBook or PDF format</span></a>
+        <a href="#" class="badge bottom"><span class="title">Digital</span><span class="price">$5.99</span><span class="extra">eBook or PDF</span></a>
         <img src="img/header.png" class="responsive"/><h2>Out Now!</h2>
       </div>
     </div>
@@ -267,8 +265,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
     <div class="multi"></div>
-    <div class="row ">
-      <p>© Curiositylandia. All rights reserved.<br />Inquiries: info@curiositylandia.com </p>
+    <div class="row half vertical">
+      <div class="col">
+        <p>© Curiositylandia. All rights reserved.<br />Inquiries: info@curiositylandia.com </p>
+      </div>
+      <div class="col aright"><input type="email" id="nemail" name="nemail" placeholder="Subscribe for news and releases" /> <a href="javascript:void(0)" class="btn purple onClickForm">Submit</a></div>
     </div>
     </div>
   </footer>
@@ -295,32 +296,26 @@ var mySwiper = new Swiper('.swiper-container.images', {
     480: { slidesPerView: 1.1 },
     320: { slidesPerView: 1.1 },
   },
-  onSlideChangeStart: function(swiper){
-    console.log("AI:"+this.activeIndex);
+  on: {
+    init: function () {
+      $('section.preview .slider .sw-prev').hide()
+    },
+    slideChange: function(){
+      if (mySwiper.activeIndex==0) {
+        $('section.preview .slider .sw-prev').hide()
+      }else if ((mySwiper.activeIndex+1) == mySwiper.slides.length-2) {
+        $('section.preview .slider .sw-prev').show()
+        $('section.preview .slider .sw-next').hide()
+      }else {
+        $('section.preview .slider .sw-prev').show()
+        $('section.preview .slider .sw-next').show()
+      }
 
-  }
-});
-mySwiper.on('init', function(){
-$('.preview.sw-prev').hide()
+    }
+  },
 });
 
-mySwiper.on('slideChange', function () {
-  console.log(mySwiper.activeIndex);
-  if (mySwiper.activeIndex==0) {
-    $('.preview.sw-prev').hide()
-    $('.preview.sw-next').show()
-  }
-  // most right postion
-  else if (mySwiper.activeIndex == mySwiper.slides.length-1) {
-    $('.preview.sw-prev').show()
-    $('.preview.sw-next').hide()
-  }
-  // middle positions
-  else {
-    $('.preview.sw-prev').show()
-    $('.preview.sw-next').show()
-  }
-});
+
 
 var mySwiper2 = new Swiper('.swiper-container.coloring', {
   direction: 'horizontal',
@@ -336,6 +331,23 @@ var mySwiper2 = new Swiper('.swiper-container.coloring', {
     640: { slidesPerView: 1.1 },
     480: { slidesPerView: 1.1 },
     320: { slidesPerView: 1.1 },
+  },
+  on: {
+    init: function () {
+      $('.coloring.sw-prev').hide()
+    },
+    slideChange: function(){
+      if (mySwiper2.activeIndex==0) {
+        $('.coloring.sw-prev').hide()
+      }else if ((mySwiper2.activeIndex+1) == mySwiper2.slides.length-2) {
+        $('.coloring.sw-prev').show()
+        $('.coloring.sw-next').hide()
+      }else {
+        $('.coloring.sw-prev').show()
+        $('.coloring.sw-next').show()
+      }
+
+    }
   },
 });
 
@@ -397,11 +409,34 @@ $(".background").height($(document).height());
 $(".background .stars").height($(document).height());
 $.fancybox.defaults.animationEffect = "fade";
 
-
+$("a.onClickForm").click(function(){
+  $("#nemail").removeClass("error");
+  var email = $("#nemail").val();
+  if(!ValidateEmail(email)){
+    $("#nemail").addClass("error");
+    return;
+  }
+  alert("pase");
+  fetch('/', {
+    method: 'POST',
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encodeURI({"email": email })
+  }).then(() => console.log('Form successfully submitted')).catch((error) =>
+    alert(error))
+});
 
 
 
 });
+
+function ValidateEmail(mail) {
+ if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)){
+    return (true)
+  }
+  return (false)
+}
+
+
 </script>
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
