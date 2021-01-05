@@ -16,7 +16,7 @@ header { z-index: 2; position: relative; }
 main { z-index: 2; position: relative;}
 footer{ z-index: 2; position: relative; }
 
-#topbar { padding: 10px; top:0; background-color: #f9fcf9; box-shadow: 0px 0px 15px rgba(0,0,0,.25); padding-top: 7px; padding-bottom: 7px; position: fixed; z-index: 10}
+#topbar { padding: 10px; top:0; background-color: rgba(255,255,255,.80); box-shadow: 0px 0px 15px rgba(0,0,0,.25); padding-top: 7px; padding-bottom: 7px; position: fixed; z-index: 10}
 
 #topbar .menu { position: absolute; top: 30px; right: 20px;width: 42px; height: 25px; z-index: 10000; padding:5px; text-align: center;}
 #topbar .menu a { display: block; width: 25px; height: 20px; }
@@ -32,6 +32,7 @@ header p { margin: 0; padding: 0px 20px; font-size: 16px; margin-bottom: 20px;}
 header .hero { min-height: 400px; color: #fff; padding-top: 80px; padding-bottom: 30px; text-align: center;}
 header .hero p { color: #9f97a4; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 100; margin-bottom: 0px;}
 header .hero .row .col { position: relative;}
+header .hero .actions { max-width: 480px; }
 header .hero .actions .col { min-height: auto;}
 header .hero h2 { font-size: 40px; color:#ffdd17; text-align: center; font-family: 'Schoolbell', cursive; font-family: 'Quicksand', sans-serif; font-weight: 700;}
 header .hero a.badge { background-color: #ffdd17; color:#835c6a; font-size: 12px; line-height: 12px;width: 110px; height: 110px; position: absolute; top: 0px; right: -45px; display: block; border-radius: 100px;}
@@ -95,7 +96,7 @@ main section.preview .slider .sw-next:hover span.on { opacity:0; }
 main section.preview .slider .sw-next:hover span.off { opacity: 1; }
 
 main section.preview .row.actions p { color: #9f97a4; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 100; margin-bottom: 0px; }
-main section.preview .row.actions { max-width: 550px;}
+main section.preview .row.actions { max-width: 480px;}
 main section.preview .row.actions .col { min-height: auto;}
 main section.quotes .holder .quotes { background-color:#f7f5f7; padding-top: 30px;}
 main section.quotes .holder .quotes h3 { color:#9f97a4; }
@@ -103,7 +104,7 @@ main section.quotes .holder .quotes p { color:#4a5350;  }
 
 footer {  }
 footer .row.fluid { min-height: 200px; }
-footer .row p { font-size: 20px; color:#7a748b;  margin-top: 10px;}
+footer .row p { font-size: 20px; color:#7a748b;  margin-top: 10px; line-height: 22px;}
 footer .multi { background-color: #f1d4b8; border-top:#000 solid 2px; height: 20px;  border-bottom:#000 solid 2px; height: 20px;}
 
 * { box-sizing: border-box;}
@@ -158,8 +159,8 @@ margin: auto;
 padding-bottom: 50px;
  background-color: #f7f5f7;
 }
-.nav { position: fixed; top: 0; bottom: 0;right: 0px; width: 100%; background-color: #f7f5f7; box-shadow: 5px 5px 40px rgba(0,0,0,.35); z-index: 10; display: none;}
-.nav h2 { text-align: center; font-size: 50px; font-family: 'kgneatlyprinted'; font-weight: 700;text-transform: uppercase; color: #9F97A4; margin-top: 120px; margin-bottom: 50px;}
+.nav { position: fixed; top: 0; bottom: 0;right: 0px; width: 100%; background-color: #f7f5f7; box-shadow: 5px 5px 40px rgba(0,0,0,.35); z-index: 10; display: none; transition: color .15s ease-out;}
+.nav h2 { text-align: center; font-size: 50px; font-family: 'kgneatlyprinted'; font-weight: 700;text-transform: uppercase; color: #9F97A4; margin-top: 120px; margin-left: auto; margin-right: auto;margin-bottom: 50px; max-width: 660px; text-align: left; }
 .nav.open { display: block; }
 .nav ul { margin-top: 20px; list-style: none; padding: 0;  margin: auto;}
 .nav ul li { margin-bottom: 5px; font-size: 18px; color: #444; transition: background-color .15s ease-out; }
@@ -182,8 +183,8 @@ header .lang { display: none;}
 header .menu { display: block;}
 header p { display: none;}
 .nav { width: 100%;}
-.nav h2 { font-size: 35px; margin-bottom: 25px;}
-.nav ul li a  { font-size: 21px; }
+.nav h2 { font-size: 28px; margin-bottom: 25px;}
+.nav ul li a  { font-size: 18px; padding-left: 25px; }
 .nav ul li .holder  { max-width: 400px;}
 .nav ul li a { background-size:18px auto; }
 .nav ul li:hover a { background-size:18px auto; }

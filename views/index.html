@@ -71,8 +71,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ul>
 </div>
 <style>
-.background { position: relative; height: 100vh; width: 100%; background: url(../img/bck-off.png) top center; z-index: 1; position: fixed; top: 0; left:0;}
-.background .stars.on {  position: fixed; top:0; left:0; height: 100vh; width: 100%; background: url(../img/bck-on.png) top center; opacity: 0; animation: pulse 2s infinite ease;}
+.background { position: relative; height: 100vh; width: 100%; background: url(../img/bck-off.png) top center; z-index: 1; position: fixed; top: 0; left:0; background-size: 70% auto;}
+.background .stars.on {  position: fixed; top:0; left:0; height: 100vh; width: 100%; background: url(../img/bck-on.png) top center; opacity: 0; animation: pulse 2s infinite ease; background-size: 70% auto;}
 @keyframes pulse {
   0%   { opacity:1; }
    50%  { opacity:0; }
@@ -111,7 +111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="col">
         <a href="#" class="badge top"><span class="title">Hardcover</span><span class="price">$11.99</span><span class="extra">+S&H</span></a>
         <a href="#" class="badge bottom"><span class="title">Digital Download</span><span class="price">$5.99</span><span class="extra">In eBook or PDF format</span></a>
-        <img src="img/header.png" class="responsive"/><h2>Out now!</h2>
+        <img src="img/header.png" class="responsive"/><h2>Out Now!</h2>
       </div>
     </div>
   </div>
@@ -121,8 +121,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="row half vertical">
         <div class="col">
           <div class="holder">
-            <h3 class="subtitle centered">Our book</h3>
-            <p class="centered">WOW, I Can See Clearly Now! is a book about my eyes and all the steps my parents and I are taking to correct my eyesight.<br /><br />
+            <h3 class="subtitle centered">Our Book</h3>
+            <p class="centered"><em>WOW, I Can See Clearly Now!</em> is a book about my eyes and all the steps my parents and I are taking to correct my eyesight.<br /><br />
               I am learning to listen to my body and the importance of every single one of its parts.<br /><br />
               When something doesn’t feel right, the first step is to talk about it and find ways to feel better! For example, when words on the chalkboard at school
               were looking a bit blurry, telling my parents was the perfect idea. They took me to the eye doctor and now I have eyeglasses that help me see better!</p>
@@ -192,12 +192,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <p class="centered">- Happy Mom</p>
                 </div>
                 <div class="swiper-slide">
-                  <h3 class="subtitle centered">Absolutely Beautiful!</h3>
+                  <h3 class="subtitle centered">Pure Innocence</h3>
                   <p class="centered">Innocent, easy to read and beautifully written. This is a story that will stay with us over the years. Recommended!</p>
                   <p class="centered">- Always Smiling Fam</p>
                 </div>
                 <div class="swiper-slide">
-                  <h3 class="subtitle centered">Absolutely Beautiful!</h3>
+                  <h3 class="subtitle centered">A Collectible</h3>
                   <p class="centered">One of those reads that any young family should have. Perfect for our collection</p>
                   <p class="centered">- Nana</p>
                 </div>
@@ -253,7 +253,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="multi"></div>
     <div class="row ">
-      <p>(C) Curiositylandia. ALL RIGHTS RESERVED</p>
+      <p>© Curiositylandia. All rights reserved.<br />Inquiries: info@curiositylandia.com </p>
     </div>
     </div>
   </footer>
@@ -270,26 +270,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 var mySwiper = new Swiper('.swiper-container.images', {
   direction: 'horizontal',
-  loop: true,
+  loop: false,
   slidesPerView : 3,
   spaceBetween : 15,
-  navigation: {
-    nextEl: '.preview.sw-next',
-    prevEl: '.preview.sw-prev',
-  },
+  mousewheel: { invert: true },
+  navigation: { nextEl: '.preview.sw-next', prevEl: '.preview.sw-prev' },
   breakpoints: {
     800: { slidesPerView: 3 },
     640: { slidesPerView: 1.1 },
     480: { slidesPerView: 1.1 },
     320: { slidesPerView: 1.1 },
   },
+  onSlideChangeStart: function(swiper){
+    console.log("AI:"+this.activeIndex);
+
+  }
+});
+mySwiper.on('init', function(){
+$('.preview.sw-prev').hide()
+});
+
+mySwiper.on('slideChange', function () {
+  console.log(mySwiper.activeIndex);
+  if (mySwiper.activeIndex==0) {
+    $('.preview.sw-prev').hide()
+    $('.preview.sw-next').show()
+  }
+  // most right postion
+  else if (mySwiper.activeIndex == mySwiper.slides.length-1) {
+    $('.preview.sw-prev').show()
+    $('.preview.sw-next').hide()
+  }
+  // middle positions
+  else {
+    $('.preview.sw-prev').show()
+    $('.preview.sw-next').show()
+  }
 });
 
 var mySwiper2 = new Swiper('.swiper-container.coloring', {
   direction: 'horizontal',
-  loop: true,
+  loop: false,
   slidesPerView : 3,
   spaceBetween : 15,
+  mousewheel: { invert: true },
   navigation: {
     nextEl: '.coloring.sw-next',
     prevEl: '.coloring.sw-prev',
@@ -302,12 +326,16 @@ var mySwiper2 = new Swiper('.swiper-container.coloring', {
   },
 });
 
-var mySwiper1 = new Swiper('.swiper-container.quotes', {
-  direction: 'horizontal',
+var swQuotes = new Swiper('.swiper-container.quotes', {
   loop: true,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+  autoplay: { delay: 8000 },
   slidesPerView : 1,
   spaceBetween : 0,
-  pagination: { el: '.swiper-pagination' }
+  pagination: { el: '.swiper-pagination' },
 });
 
 $(document).keyup(function(e) {
