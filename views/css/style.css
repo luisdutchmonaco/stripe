@@ -191,21 +191,23 @@ padding-bottom: 50px;
 }
 
 @media only screen and (max-width: 800px) {
+  .nav { padding-left: 15px; padding-right: 15px;}
 .row.half .col { width: 100%; display:block;}
 footer .row p { text-align: center; }
 main section.coloring-sheets ul li { width: 100%; display: block;}
 header .hero { text-align: center; padding-bottom: 0px;}
 header .hero .desktop { display: none;}
 header .hero .mobile { display: block; margin-top: 50px;}
-header .hero a.badge.top { right: 100px; top:-70px;}
-header .hero a.badge { right: 10px; top: -40px;}
+header .hero a.badge.top { right: 100px; top:-75px;}
+header .hero a.badge { right: 10px; top: -45px;}
 header .lang { display: none;}
 header .menu { display: block;}
 .mobile { display: block; }
-
+main section { padding-top: 30px; padding-bottom: 30px; }
 main section.preview .row.half .col { width: 100%; margin-bottom: 25px;}
 
 .nav { width: 100%;}
+
 .nav h2 { font-size: 28px; margin-bottom: 25px;}
 .nav ul li a  { font-size: 18px; padding-left: 25px; }
 .nav ul li .holder  { max-width: 400px;}
