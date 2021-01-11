@@ -12,10 +12,12 @@ h1 { font-size: 45px; font-weight: 100; margin-bottom: 25px;}
 h2 { font-size: 40px; font-weight: 100; margin-bottom: 25px;}
 h3 { font-size: 35px; font-weight: 100; line-height: 45px; margin-bottom: 25px;}
 h3.subtitle { color:#9f97a4; font-family: 'kgneatlyprinted'; font-size: 46px; font-weight: 100; margin-bottom:30px;}
-
+.mobile { display: none;}
 header { z-index: 2; position: relative; }
 main { z-index: 2; position: relative;}
 footer{ z-index: 2; position: relative; }
+
+.hidden { display: none; }
 
 #topbar { padding: 10px; top:0; background-color: rgba(255,255,255,.80); box-shadow: 0px 0px 15px rgba(0,0,0,.25); padding-top: 7px; padding-bottom: 7px; position: fixed; z-index: 10; min-height: 80px;}
 #topbar img { margin-top: 6px;}
@@ -183,14 +185,26 @@ padding-bottom: 50px;
 .nav ul li.last { margin-top: 30px;}
 .nav ul li.last a { font-size: 16px; font-weight: 100; }
 
+@media only screen and (max-width: 1300px) {
+  header .hero a.badge.top { right: 100px; top:-55px;}
+  header .hero a.badge { right: 10px; top: -15px;}
+}
+
 @media only screen and (max-width: 800px) {
 .row.half .col { width: 100%; display:block;}
 footer .row p { text-align: center; }
 main section.coloring-sheets ul li { width: 100%; display: block;}
-header .hero { text-align: center; }
+header .hero { text-align: center; padding-bottom: 0px;}
+header .hero .desktop { display: none;}
+header .hero .mobile { display: block; margin-top: 50px;}
+header .hero a.badge.top { right: 100px; top:-70px;}
+header .hero a.badge { right: 10px; top: -40px;}
 header .lang { display: none;}
 header .menu { display: block;}
-header p { display: none;}
+.mobile { display: block; }
+
+main section.preview .row.half .col { width: 100%; margin-bottom: 25px;}
+
 .nav { width: 100%;}
 .nav h2 { font-size: 28px; margin-bottom: 25px;}
 .nav ul li a  { font-size: 18px; padding-left: 25px; }
@@ -199,10 +213,16 @@ header p { display: none;}
 .nav ul li:hover a { background-size:18px auto; }
 .nav ul li.sub a { background-size:14px auto; }
 .nav ul li.sub:hover a { background-size:14px auto; }
-a.btn { min-width: 150px;}
+a.btn { min-width: 250px;}
 header h1 { font-size: 30px;}
 .swiper-button-next { display: none;}
 .swiper-button-prev { display: none;}
+footer .row.half .col { min-height: auto; margin-top: 20px; }
+footer .row.fluid { padding-bottom: 25px;}
+main section.coloring-sheets .holder .sw-next { display: none; }
+main section.coloring-sheets .holder .sw-prev { display: none; }
+main section.preview .slider .sw-next { display: none; }
+main section.preview .slider .sw-prev { display: none; }
 }
 .left-arrow.swiper-button-disabled {opacity: 0;}
 
