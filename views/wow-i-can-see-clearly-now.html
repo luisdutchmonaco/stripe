@@ -229,11 +229,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="preview sw-next"><span class="on"></span><span class="off"></span></div>
             <div class="swiper-container images">
               <div class="swiper-wrapper">
-                <div class="swiper-slide"><a href="img/prev001.png" data-fancybox="gallery"><img src="img/prev001.png" class="responsive"/></a></div>
-                <div class="swiper-slide"><a href="img/prev002.png" data-fancybox="gallery"><img src="img/prev002.png" class="responsive"/></a></div>
-                <div class="swiper-slide"><a href="img/prev003.png" data-fancybox="gallery"><img src="img/prev003.png" class="responsive"/></a></div>
-                <div class="swiper-slide"><a href="img/prev004.png" data-fancybox="gallery"><img src="img/prev004.png" class="responsive"/></a></div>
-                <div class="swiper-slide"><a href="img/prev005.png" data-fancybox="gallery"><img src="img/prev005.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)" data-idx="0" class="onClickGallery"><img src="img/prev001.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)" data-idx="1" class="onClickGallery"><img src="img/prev002.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)" data-idx="2" class="onClickGallery"><img src="img/prev003.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)" data-idx="3" class="onClickGallery"><img src="img/prev004.png" class="responsive"/></a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)" data-idx="4" class="onClickGallery"><img src="img/prev005.png" class="responsive"/></a></div>
               </div>
             </div>
           </div>
@@ -390,9 +390,7 @@ var mySwiper3 = new Swiper('.swiper-container.overlay', {
   spaceBetween : 15,
   navigation: { nextEl: '#gallery .sw-next', prevEl: '#gallery .sw-prev' },
   on: {
-    init: function () {
-      $('#gallery .sw-prev').hide()
-    },
+    init: function (){ $('#gallery .sw-prev').hide() },
     slideChange: function(){
       if (mySwiper3.activeIndex==0) {
         $('#gallery .sw-prev').hide()
@@ -476,6 +474,15 @@ $(document).ready(function(){
     $(this).toggleClass("active");
     if($(".nav").is(":visible")){ $(".nav").removeClass("open").fadeOut(); }else { $(".nav").addClass("open").fadeIn(); }
 
+  });
+
+
+  $("a.onClickGallery").click(function(){
+    var idx = $(this).data("idx");
+
+    mySwiper3.update();
+    mySwiper3.slideTo(idx);
+    $("#gallery").fadeIn();
   });
 
 $("#app").click(function(e){
