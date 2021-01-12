@@ -325,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       </div>
       <div class="col aright">
-        <form name="subscribe" method="POST" data-netlify="true"><input type="email" id="nemail" name="nemail" placeholder="Subscribe for news and releases" /> <a href="javascript:void(0)" class="btn purple onClickForm">SEND</a></form>
+        <form id="subscribe" name="subscribe" method="POST" data-netlify="true"><input type="email" id="nemail" name="nemail" placeholder="Subscribe for news and releases" value="" /> <a href="javascript:void(0)" class="btn purple onClickForm">SEND</a></form>
         <p class="mobile">© Curiositylandia. All rights reserved.<br />Inquiries: info@curiositylandia.com </p>
       </div>
     </div>
@@ -521,8 +521,7 @@ $("a.onClickForm").click(function(){
     return;
   }
 
-  let myForm = document.getElementById('subscribe');
-  let formData = new FormData(myForm);
+  let formData = new FormData($('#subscribe')[0]);
   console.log(formData);
 
   fetch('/', {
