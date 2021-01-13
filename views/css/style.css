@@ -150,11 +150,11 @@ footer .row.half .col { min-height: 200px; }
 
 * { box-sizing: border-box;}
 a { text-decoration: none; color: #333; display: inline-block;}
+
 .btn {
   min-width: 200px; text-align: center; padding: 12px 6px; color: #fff; margin-left: 5px; margin-right: 5px;
   border-radius: 6px; font-size: 22px; text-transform: uppercase;
   transition: all .15s ease-out;
-
 }
 .btn.yellow:hover { background-color: #9f97a4; color:#fff; }
 
@@ -163,10 +163,10 @@ a { text-decoration: none; color: #333; display: inline-block;}
 .btn.purple:hover {background-color: #ffdd17; color: #7a616c;}
 .btn:hover { background-color: #fff; color: #000;}
 
-button.btn { min-width: 160px; text-align: center; padding: 12px 7px; color: #fff; margin-left: 5px; margin-right: 5px; border-radius: 6px; font-size: 20px;}
-button.btn.yellow { background-color: #ffdd17; color:#7a616c; font-family: 'Quicksand', sans-serif; }
-button.btn.purple { background-color: #9f97a4; color:#fff; font-family: 'Quicksand', sans-serif; }
-button.btn:hover { background-color: #fff; color: #000;}
+#modal button.btn { min-width: 160px; text-align: center; padding: 12px 7px; color: #fff; margin-left: 5px; margin-right: 5px; border-radius: 6px; font-size: 20px;}
+#modal button.btn.yellow { background-color: #ffdd17; color:#7a616c; font-family: 'Quicksand', sans-serif; }
+#modal button.btn.purple { background-color: #9f97a4; color:#fff; font-family: 'Quicksand', sans-serif; }
+#modal button.btn:hover { background-color: #fff; color: #000;}
 
 
 .fancybox-button--zoom { display:none !important; }
