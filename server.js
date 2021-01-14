@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
-app.use(express.static(path.join(__dirname, './views')));
+app.use(express.static(path.join(__dirname, './dist')));
 
 app.get('/dl/:slug', function(req, res) {
   var lid = req.params.slug;

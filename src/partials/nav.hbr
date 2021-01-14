@@ -1,0 +1,12 @@
+<div class="nav">
+  <h2>Books in our collection:</h2>
+  <ul class="list">
+    <li><div class="holder"><a href="#">WOW! I Can See Clearly Now!</a></div></li>
+    <li class="sub"><div class="holder"><a href="javascript:void(0)" class="onClickModal">Buy Now</a></div></li>
+    <li class="sub"><div class="holder"><a href="#">Download</a></div></li>
+    <li><div class="holder"><a href="#">Achoo is Short for Allergies! Achoo! </a></div></li>
+    <li class="sub"><div class="holder"><a href="javascript:void(0)" class="onClickModal">Coming Soon</a></div></li>
+    <li><div class="holder"><a href="#" class="active">English</a></div></li>
+    <li><div class="holder"><a href="#">Español</a></div></li>
+  </ul>
+</div>
