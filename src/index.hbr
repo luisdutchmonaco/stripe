@@ -57,7 +57,7 @@
 </script>
 <script data-ad-client="ca-pub-5504100751989476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-<script src="logo.js"></script>
+<script src="js/logo.js"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
@@ -81,7 +81,13 @@ function handleComplete(evt,comp) {
 		stage.addChild(exportRoot);
 		createjs.Ticker.framerate = lib.properties.fps;
 		createjs.Ticker.addEventListener("tick", stage);
-    setTimeout(function(){ location.href= '/wow-i-can-see-clearly-now.html' },4000);
+    var language = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
+    if(language="es-MX" || language="es-ES"){
+      setTimeout(function(){ location.href= '/ahora-veo-todo-perfecto' },4000);
+    }else{
+      setTimeout(function(){ location.href= '/wow-i-can-see-clearly-now' },4000);
+    }
+
 	}
 	//Code to support hidpi screens and responsive scaling.
 	AdobeAn.makeResponsive(true,'both',false,1,[canvas,anim_container,dom_overlay_container]);

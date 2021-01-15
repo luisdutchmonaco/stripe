@@ -253,7 +253,7 @@ padding-bottom: 50px;
   footer br { display: none;}
   footer img { margin: auto; margin-top: 20px;}
   footer p { margin-top: 25px;}
-  footer p.mobile { display: block;}
+  footer p.mobile { display: block; margin-top: 20px;}
   footer p.desktop { display: none; }
   footer .row .col a { max-width: 60px; min-width: 80px;}
   main section.coloring-sheets .holder .sw-next { display: none; }
