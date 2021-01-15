@@ -144,7 +144,7 @@ footer .multi { background-color: #f1d4b8; border-top:#000 solid 2px; height: 20
 footer .row .col { min-height: auto; padding-top: 10px; }
 footer .row .col a { max-width: 100px; display: inline-block; margin-right: 5px; }
 footer .row .col img { max-width: 100px; width: 100%;display: inline-block; vertical-align: middle; margin-right: 10px; }
-footer input { width: 300px; border-radius: 6px;height: 50px; text-indent: 15px; border:#9f97a4 solid 2px;}
+footer input { width: 300px; border-radius: 6px;height: 50px; text-indent: 15px; border:#9f97a4 solid 2px; font-family: 'Quicksand', sans-serif;}
 footer input.error { border:#e74c3c solid 2px;  }
 footer .row.half .col { min-height: 200px; }
 

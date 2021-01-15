@@ -37,6 +37,7 @@ function build(cb,json) {
           }
       }
   }
+  gulp.src('src/index.hbr').pipe(handlebars(templateData, options)).pipe(rename('index.html')).pipe(gulp.dest('dist'));
   gulp.src('src/wow-i-can-see-clearly-now.hbr').pipe(handlebars(templateData, options)).pipe(rename('wow-i-can-see-clearly-now.html')).pipe(gulp.dest('dist'));
   gulp.src('src/ahora-veo-todo-perfecto.hbr').pipe(handlebars(templateData, options)).pipe(rename('ahora-veo-todo-perfecto.html')).pipe(gulp.dest('dist'));
   cb();
