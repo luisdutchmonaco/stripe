@@ -42,19 +42,20 @@ function build(cb,json) {
   cb();
 }
 
+
+function uielements(cb){
+  cb();
+}
+
 function data(cb){
   var json = {};
   const airtable = new Airtable({ apiKey: 'keyh4ZnksjZg4USrF' }).base('appuoshptISMGIo0F');
 
-  airtable.table('Pages').list().then(result => {
-    result.records.forEach(function(record) {
-      //json.pages.push(record.fields);
-    });
-  });
 
   airtable.table('wow-i-can-see-clearly-now').list({maxRecords:100}).then(result => {
-    var content = result.records;
 
+    var content = result.records;
+    console.log(_.findWhere(content, {id: "rec1ETfDY5pykSH3c"}).fields.Attachments[0]);
     /* structure */
     var sections = {};
     var meta = {
@@ -71,8 +72,9 @@ function data(cb){
       download_copy: { en: _.findWhere(content, {id: "rec0BwBe6AxRiuTNF"}).fields.en, es: _.findWhere(content, {id: "rec0BwBe6AxRiuTNF"}).fields.es },
     }
     hero = {
+      left_svg : { en: _.findWhere(content, {id: "recwAydKD7VKhbndV"}).fields.Attachments[0].url, es: _.findWhere(content, {id: "recLpa5sWVeZqCY94"}).fields.Attachments[0].url },
       right_copy : { en: _.findWhere(content, {id: "recRleIrQz0I7zasn"}).fields.en, es: _.findWhere(content, {id: "recRleIrQz0I7zasn"}).fields.es },
-      right_image : { en: _.findWhere(content, {id: "rec7lbElFvCqbjgZB"}).fields.en, es: _.findWhere(content, {id: "rec7lbElFvCqbjgZB"}).fields.es },
+      right_image : { en: _.findWhere(content, {id: "rec7lbElFvCqbjgZB"}).fields.Attachments[0].url, es: _.findWhere(content, {id: "rec1ETfDY5pykSH3c"}).fields.Attachments[0].url },
       badge_top : { en: _.findWhere(content, {id: "recscGm1kdAo0HWk9"}).fields.en, es: _.findWhere(content, {id: "recscGm1kdAo0HWk9"}).fields.es },
       badge_bottom : { en: _.findWhere(content, {id: "rec2cMcusHXXRqSwQ"}).fields.en, es: _.findWhere(content, {id: "rec2cMcusHXXRqSwQ"}).fields.es },
     }
@@ -93,12 +95,11 @@ function data(cb){
     });
 
 
-
     sections = {
       ourbook : {
         title : { en: _.findWhere(content, {id: "rec3Ls2OZURA3LPZY"}).fields.en, es: _.findWhere(content, {id: "rec3Ls2OZURA3LPZY"}).fields.es },
         copy: { en: _.findWhere(content, {id: "recmmeXCeBkDxnxko"}).fields.en, es: _.findWhere(content, {id: "recmmeXCeBkDxnxko"}).fields.es },
-        image: { en: _.findWhere(content, {id: "recb6KyaHfYaN7YqH"}).fields.en, es: _.findWhere(content, {id: "recb6KyaHfYaN7YqH"}).fields.es },
+        image: { en: _.findWhere(content, {id: "recb6KyaHfYaN7YqH"}).fields.Attachments[0].url, es: _.findWhere(content, {id: "recjAZY0NSzfWRjQu"}).fields.Attachments[0].url },
       },
       preview: {
         carousell_en : _.findWhere(content, {id: "recisDHSTRhjUSaf3"}).fields.Attachments,
@@ -107,19 +108,25 @@ function data(cb){
       coloring: {
         title : { en: _.findWhere(content, {id: "rec54kqRXproX1n4A"}).fields.en, es: _.findWhere(content, {id: "rec54kqRXproX1n4A"}).fields.es },
         carousell : attachments,
+      },
+      testimonials: {
+        image: { en: _.findWhere(content, {id: "recqc7icWSxB5Sed3"}).fields.Attachments[0].url, es: _.findWhere(content, {id: "recwlWj0kjqGb0A9d"}).fields.Attachments[0].url },
       }
     }
 
     var data = { meta : meta, hero : hero, sections: sections, footer: footer, buttons: buttons };
     build(function(){},data);
-
   });
   cb();
 
 }
 
 
+
+
+
+
 exports.data = data;
 exports.build = build;
 exports.assets = assets;
-exports.default = gulp.series(assets,data);
+exports.default = gulp.series(assets,uielements,data);

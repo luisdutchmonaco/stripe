@@ -91,7 +91,7 @@ function handleComplete(evt,comp) {
 </script>
 </head>
 <style>
-body {   display: flex;
+body {   display: flex; background-color: #E9F8FF;
   align-items: center;
   justify-content: center; height: 100vh;}
 </style>

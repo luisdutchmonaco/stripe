@@ -137,7 +137,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="row half vertical">
       <div class="col">
         <div class="holder">
-          <img src="img/wicsn-logo.svg" class="responsive" />
+          <img src="{{hero.left_svg.es}}" class="responsive" />
           <br /><br />
           <div class="row actions desktop">
             <div class="col"><a href="javascript:void(0)" class="btn onClickModal yellow">{{buttons.buy_lbl.es}}</a><p>{{buttons.buy_copy.es}}</p></div>
@@ -148,7 +148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="col">
         <a href="#" class="badge top">{{{hero.badge_top.es}}}</a>
         <a href="#" class="badge bottom">{{{hero.badge_bottom.es}}}</a>
-        <img src="img/header.png" class="responsive"/><h2>{{hero.right_copy.es}}</h2>
+        <img src="{{hero.right_image.es}}" class="responsive"/><h2>{{hero.right_copy.es}}</h2>
         <div class="row actions mobile hidden">
           <div class="col"><a href="javascript:void(0)" class="btn onClickModal yellow">{{buttons.buy_lbl.es}}</a><p>{{buttons.buy_copy.es}}</p></div>
           <div class="col"><a href="javascript:void(0)" class="btn onClickModal purple">{{buttons.download_lbl.es}}</a><p>{{buttons.download_copy.es}}</p></div>
@@ -161,7 +161,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="block intro">
       <div class="row half vertical">
         <div class="col"><div class="holder"><h3 class="subtitle centered">{{sections.ourbook.title.es}}</h3><p class="centered">{{{sections.ourbook.copy.es}}}</p></div></div>
-        <div class="col"><div class="holder"><img src="img/examen-vista.png" class="responsive"/></div></div>
+        <div class="col"><div class="holder"><img src="{{sections.ourbook.image.es}}" class="responsive"/></div></div>
       </div>
     </section>
 
@@ -197,7 +197,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <section class="block quotes">
         <div class="row half vertical">
-          <div class="col"><div class="holder"><img src="img/mama-lelu.png" class="responsive"/></div></div>
+          <div class="col"><div class="holder"><img src="{{sections.testimonials.image.es}}" class="responsive"/></div></div>
           <div class="col">
             <div class="holder">
             <center>

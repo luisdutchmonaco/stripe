@@ -114,15 +114,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><div class="holder"><a href="#">Español</a></div></li>
   </ul>
 </div>
-<style>
-.background { position: absolute; min-height: 100%; bottom:0; width: 100%; background: url(../img/bck-off.png) top center; z-index: 1; top: 0; left:0; background-size: 50% auto; opacity: .6; }
-.background .stars.on {  position: absolute; top:0; bottom: 0;left:0; min-height: 100%; width: 100%; background: url(../img/bck-on.png) top center; opacity: 0; animation: pulse 6s infinite ease; background-size: 50% auto; opacity: .6; }
-@keyframes pulse {
-  0%   { opacity:1; }
-  50%  { opacity:0; }
-  100% { opacity:1; }
-}
-</style>
 <div id="app">
   <div class="background">
     <div class="stars on"></div>
@@ -137,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="row half vertical">
       <div class="col">
         <div class="holder">
-          <img src="img/wicsn-logo.svg" class="responsive" />
+          <img src="{{hero.left_svg.en}}" class="responsive" />
           <br /><br />
           <div class="row actions desktop">
             <div class="col"><a href="javascript:void(0)" class="btn onClickModal yellow">{{buttons.buy_lbl.en}}</a><p>{{buttons.buy_copy.en}}</p></div>
@@ -148,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="col">
         <a href="#" class="badge top">{{{hero.badge_top.en}}}</a>
         <a href="#" class="badge bottom">{{{hero.badge_bottom.en}}}</a>
-        <img src="img/header.png" class="responsive"/><h2>{{hero.right_copy.en}}</h2>
+        <img src="{{hero.right_image.en}}" class="responsive"/><h2>{{hero.right_copy.en}}</h2>
         <div class="row actions mobile hidden">
           <div class="col"><a href="javascript:void(0)" class="btn onClickModal yellow">{{buttons.buy_lbl.en}}</a><p>{{buttons.buy_copy.en}}</p></div>
           <div class="col"><a href="javascript:void(0)" class="btn onClickModal purple">{{buttons.download_lbl.en}}</a><p>{{buttons.download_copy.en}}</p></div>
@@ -161,7 +152,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="block intro">
       <div class="row half vertical">
         <div class="col"><div class="holder"><h3 class="subtitle centered">{{sections.ourbook.title.en}}</h3><p class="centered">{{{sections.ourbook.copy.en}}}</p></div></div>
-        <div class="col"><div class="holder"><img src="img/examen-vista.png" class="responsive"/></div></div>
+        <div class="col"><div class="holder"><img src="{{sections.ourbook.image.en}}" class="responsive"/></div></div>
       </div>
     </section>
 
@@ -197,7 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <section class="block quotes">
         <div class="row half vertical">
-          <div class="col"><div class="holder"><img src="img/mama-lelu.png" class="responsive"/></div></div>
+          <div class="col"><div class="holder"><img src="{{sections.testimonials.image.en}}" class="responsive"/></div></div>
           <div class="col">
             <div class="holder">
             <center>
@@ -289,7 +280,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-
+console.log(navigator.languages);
 var mySwiper = new Swiper('.swiper-container.images', {
   direction: 'horizontal',
   loop: false,
