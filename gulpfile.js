@@ -56,7 +56,6 @@ function data(cb){
   airtable.table('wow-i-can-see-clearly-now').list({maxRecords:100}).then(result => {
 
     var content = result.records;
-    console.log(_.findWhere(content, {id: "rec1ETfDY5pykSH3c"}).fields.Attachments[0]);
     /* structure */
     var sections = {};
     var meta = {
