@@ -81,12 +81,13 @@ function handleComplete(evt,comp) {
 		stage.addChild(exportRoot);
 		createjs.Ticker.framerate = lib.properties.fps;
 		createjs.Ticker.addEventListener("tick", stage);
-    var language = navigator.languages && navigator.languages[0] || // Chrome / Firefox
-               navigator.language ||   // All browsers
-               navigator.userLanguage; // IE <= 10
+    var language = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
+    if(language=="es-MX" || language=="es-ES"){
+      setTimeout(function(){ location.href= '/ahora-veo-todo-perfecto' },4000);
+    }else{
+      setTimeout(function(){ location.href= '/wow-i-can-see-clearly-now' },4000);
+    }
 
-               console.log(language);
-    //setTimeout(function(){ location.href= '/wow-i-can-see-clearly-now.html' },4000);
 	}
 	//Code to support hidpi screens and responsive scaling.
 	AdobeAn.makeResponsive(true,'both',false,1,[canvas,anim_container,dom_overlay_container]);
@@ -101,8 +102,8 @@ body {   display: flex; background-color: #E9F8FF;
   justify-content: center; height: 100vh;}
 </style>
 <body onload="init();" style="margin:0px;">
-	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
-		<canvas id="canvas" width="1920" height="1080" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+	<div id="animation_container" style="background-color:rgba(233, 248, 255, 1.00); width:1920px; height:1080px">
+		<canvas id="canvas" width="1920" height="1080" style="position: absolute; display: block; background-color:rgba(233, 248, 255, 1.00);"></canvas>
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1080px; position: absolute; left: 0px; top: 0px; display: block;">
 		</div>
 	</div>
