@@ -171,7 +171,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       {{#sections.preview.carousell_en}}
                         <div class="swiper-slide"><a href="javascript:void(0)" data-idx="{{@index}}" class="onClickGallery"><img src="{{this.url}}" class="responsive"/></a></div>
                       {{/sections.preview.carousell_en}}
-
                     </div>
                   </div>
                 </div>

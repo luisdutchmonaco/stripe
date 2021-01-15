@@ -102,6 +102,7 @@ function data(cb){
         image: { en: _.findWhere(content, {id: "recb6KyaHfYaN7YqH"}).fields.Attachments[0].url, es: _.findWhere(content, {id: "recjAZY0NSzfWRjQu"}).fields.Attachments[0].url },
       },
       preview: {
+        title : { en: _.findWhere(content, {id: "reckNooQMq6wkuJSi"}).fields.en, es: _.findWhere(content, {id: "reckNooQMq6wkuJSi"}).fields.es },
         carousell_en : _.findWhere(content, {id: "recisDHSTRhjUSaf3"}).fields.Attachments,
         carousell_es : _.findWhere(content, {id: "recWzmZ7yU6DvJ6SP"}).fields.Attachments,
       },
