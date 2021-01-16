@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta.title.en}}</title>
+  <meta name="title" content="{{meta.title.en}}">
+  <meta name="description" content="{{meta.description.en}}">
+  <meta name="application-name" content="&nbsp;"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{meta.og_url.en}}">
+  <meta property="og:title" content="{{meta.title.en}}">
+  <meta property="og:description" content="{{meta.description.en}}">
+  <meta property="og:image" content="{{meta.og_image.en}}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{meta.og_url.en}}">
+  <meta property="twitter:title" content="{{meta.title.en}}">
+  <meta property="twitter:description" content="{{meta.description.en}}">
+  <meta property="twitter:image" content="{{meta.og_image.en}}">
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PP97SJX');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FDFRPW16H6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FDFRPW16H6');
+</script>
+<script data-ad-client="ca-pub-5504100751989476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="js/logo.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("3CBB4EA57462394B849DB3C6744AEA9C");
+	var lib=comp.getLibrary();
+	createjs.MotionGuidePlugin.install();
+	handleComplete({},comp);
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	exportRoot = new lib.logo_demo_1_HTML5Canvas();
+	stage = new lib.Stage(canvas);
+
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+    var language = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
+    if(language.indexOf("es")!=-1){
+      setTimeout(function(){ location.href= '/ahora-veo-todo-perfecto' },4000);
+    }else{
+      setTimeout(function(){ location.href= '/wow-i-can-see-clearly-now' },4000);
+    }
+
+	}
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(true,'both',false,1,[canvas,anim_container,dom_overlay_container]);
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+</head>
+<style>
+body {   display: flex; background-color: #E9F8FF;
+  align-items: center;
+  justify-content: center; height: 100vh;}
+</style>
+<body onload="init();" style="margin:0px;">
+	<div id="animation_container" style="background-color:rgba(233, 248, 255, 1.00); width:100%; height:auto">
+		<canvas id="canvas" style="position: absolute; display: block; background-color:rgba(233, 248, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:100; height:auto; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+</body>
+</html>

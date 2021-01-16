@@ -6,7 +6,7 @@
     font-style: normal;
 
 }
-* { outline: none;}
+* { outline: none; box-sizing: border-box;}
 body { font-family: 'kgneatlyprinted'; font-size: 22px; color: #333; font-weight: 100; background:#E9F8FF; margin: 0;}
 h1 { font-size: 45px; font-weight: 100; margin-bottom: 25px;}
 h2 { font-size: 40px; font-weight: 100; margin-bottom: 25px;}
@@ -74,7 +74,7 @@ header .hero a.badge.top span.title { margin-top: 30px;}
 header .hero a.badge.bottom {}
 header .holder { padding: 25px; padding-bottom: 0px;}
 
-main section  { padding-top: 50px; padding-bottom: 50px;}
+main section  { padding-top: 30px; padding-bottom: 30px;}
 main section .actions { text-align: center; margin-top: 25px; }
 main section.coloring-sheets .row.bg-green { background-color: #f7f5f7; }
 main section.coloring-sheets { text-align: center;}
@@ -104,7 +104,9 @@ main section.coloring-sheets .swiper-slide span.btn { position: absolute; top:50
 main section.coloring-sheets .swiper-slide a:hover span.btn { opacity: 1;}
 main section .holder { padding: 25px;}
 
+main section.intro h3.subtitle { margin-top: 0px;}
 main section.intro p { max-width: 510px; margin: auto; font-size: 24px; line-height: 30px;}
+main section.intro .col img { max-width: 445px;}
 
 main section.preview .holder { padding-left:0px; padding-right: 0px; }
 main section.preview .slider { padding:30px; position: relative; max-width: 1200px; margin: auto !important;}
@@ -128,23 +130,31 @@ main section.preview .slider .sw-next span.off { background: url("../img/arrow_p
 main section.preview .slider .sw-next:hover span.on { opacity:0; }
 main section.preview .slider .sw-next:hover span.off { opacity: 1; }
 
+main section.preview  { padding-top: 0px; }
 main section.preview .row.actions p { color: #9f97a4; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 100; margin-bottom: 0px; margin-top: 0px; }
 main section.preview .row.actions { max-width: 480px;}
 main section.preview .row.actions .col { min-height: auto;}
+main section.quotes { padding-top: 10px;}
+main section.quotes  .col img { max-width: 445px;}
+main section.quotes .holder { text-align: center;}
 main section.quotes .holder .quotes { background-color:#f7f5f7; padding-top: 30px;}
-main section.quotes .holder .quotes h3 { color:#9f97a4; padding-left: 15px; padding-right: 15px; }
+main section.quotes .holder .quotes h3 { color:#9f97a4; padding-left: 15px; padding-right: 15px; margin-top: 0px;}
 main section.quotes .holder .quotes p { color:#4a5350; padding-left: 15px; padding-right: 15px;}
-
+main section.quotes .holder .quotes p:last-child { margin-bottom: 0px;}
 footer { font-size: 20px; color:#7a748b; }
+footer ul.links {font-size: 0; text-align: left; padding-left:0px; max-width: 480px;}
+footer ul.links li { width: 25%; display: inline-block; vertical-align: middle; padding: 5px;}
+footer ul.links li a { display: block;}
 footer p.mobile { display: none;}
 footer p.desktop { display: block; }
 footer .row.fluid { min-height: 200px; }
 footer .row p { line-height: 22px; margin-top: 0px; margin-bottom: 0px;}
 footer .multi { background-color: #f1d4b8; border-top:#000 solid 2px; height: 20px;  border-bottom:#000 solid 2px; height: 20px;}
 footer .row .col { min-height: auto; padding-top: 10px; }
-footer .row .col a { max-width: 100px; display: inline-block; margin-right: 5px; }
+footer .row .col a { max-width: 100%; display: inline-block;}
 footer .row .col img { width: 100%;display: inline-block; vertical-align: middle; margin-right: 10px; }
-footer input { width: 300px; border-radius: 6px;height: 50px; text-indent: 15px; border:#9f97a4 solid 2px; font-family: 'Quicksand', sans-serif; font-size: 14px;}
+footer input { max-width: 300px; width: 100%;border-radius: 6px;height: 50px; text-indent: 15px; border:#9f97a4 solid 2px; font-family: 'Quicksand', sans-serif; font-size: 14px;}
+footer form a { min-width: 120px !important;}
 footer input.error { border:#e74c3c solid 2px;  }
 footer .row.half .col { min-height: 200px; }
 
@@ -218,12 +228,24 @@ padding-bottom: 50px;
   header .hero a.badge { right: 10px; top: -15px;}
 }
 
+@media only screen and (max-width: 1280px) {
+  main section.coloring-sheets .holder { overflow: hidden;}
+  main section.preview .holder { overflow: hidden;}
+  footer .row.half .col { padding-left: 20px; padding-right: 20px;}
+}
+
+@media only screen and (max-width: 990px) {
+  footer ul.links { max-width: 300px;}
+footer ul.links li { width: 50%;}
+}
+
+
 @media only screen and (max-width: 800px) {
   .nav { padding-left: 15px; padding-right: 15px;}
   .row.half .col { width: 100%; display:block;}
   footer .row p { text-align: center; }
   main section.coloring-sheets ul li { width: 100%; display: block;}
-  header .hero { text-align: center; padding-bottom: 0px;}
+  header .hero { text-align: center; padding-bottom: 0px; padding-top: 40px;}
   header .hero .desktop { display: none;}
   header .hero .mobile { display: block; margin-top: 50px;}
   header .hero a.badge.top { right: 100px; top:-75px;}
@@ -234,7 +256,7 @@ padding-bottom: 50px;
   .mobile { display: block; }
   main section { padding-top: 30px; padding-bottom: 30px; }
   main section.preview .row.half .col { width: 100%; margin-bottom: 25px;}
-
+  main section.preview .row.half .col:last-child { margin-bottom: 0px;}
   .nav { width: 100%;}
 
   .nav h2 { font-size: 28px; margin-bottom: 25px;}
@@ -254,12 +276,15 @@ padding-bottom: 50px;
   footer img { margin: auto; margin-top: 20px;}
   footer p { margin-top: 25px;}
   footer p.mobile { display: block; margin-top: 20px;}
+  footer p.mobile br { display: block; }
   footer p.desktop { display: none; }
-  footer .row .col a { max-width: 60px; min-width: 80px;}
+  footer ul.links { margin: auto; text-align: center;}
+  footer ul.links li { width: 50%; text-align: center; padding-top: 0px;}
+    footer ul.links li a { margin: auto;}
   main section.coloring-sheets .holder .sw-next { display: none; }
   main section.coloring-sheets .holder .sw-prev { display: none; }
-  main section.preview .slider .sw-next { display: none; }
-  main section.preview .slider .sw-prev { display: none; }
+  main section.preview .slider .sw-next { display: none !important; }
+  main section.preview .slider .sw-prev { display: none !important; }
 }
 
 @media only screen and (max-width: 600px) {
