@@ -119,7 +119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="stars on"></div>
   </div>
   <div id="topbar" class="row fluid topbar">
-    <div class="menu"><a href="#" class="onClickNav"><span class="top"></span><span class="bottom"></span></a></div>
+    <div class="menu"><a href="javascript:void(0)" class="onClickNav"><span class="top"></span><span class="bottom"></span></a></div>
     <img src="img/logo.svg" class="responsive logo" style="max-width:220px;" />
   </div>
   <header>
@@ -466,7 +466,7 @@ $("a.onClickForm").click(function(){
     method: 'POST',
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString()
-  }).then(() => $("#email").attr("placeholder", "Thank you for subscribing!").blur()).catch((error) => alert(error)) });
+  }).then(() => $("#email").attr("placeholder", "Thank you for subscribing!").val("").blur()).catch((error) => alert(error)) });
 
 });
 

@@ -155,8 +155,8 @@ footer .multi { background-color: #f1d4b8; border-top:#000 solid 2px; height: 20
 footer .row .col { min-height: auto; padding-top: 10px; }
 footer .row .col a { max-width: 100%; display: inline-block;}
 footer .row .col img { width: 100%;display: inline-block; vertical-align: middle; margin-right: 10px; }
-footer input { max-width: 300px; width: 100%;border-radius: 6px;height: 50px; text-indent: 15px; border:#9f97a4 solid 2px; font-family: 'Quicksand', sans-serif; font-size: 14px;}
-footer form a { min-width: 120px !important;}
+footer form input { max-width: 300px; width: 100%;border-radius: 6px;height: 49px; text-indent: 15px; border:#9f97a4 solid 2px; font-family: 'Quicksand', sans-serif; font-size: 14px; vertical-align: top;}
+footer form a { min-width: 120px !important; vertical-align: top;}
 footer input.error { border:#e74c3c solid 2px;  }
 footer .row.half .col { min-height: 200px; }
 
