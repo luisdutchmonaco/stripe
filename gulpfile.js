@@ -39,9 +39,9 @@ function build(slug,json) {
       gulp.src('src/index.hbs').pipe(handlebars(templateData, options)).pipe(rename('index.html')).pipe(gulp.dest('dist'));
     break;
     case "wow-i-can-see-clearly-now":
-    case "ahora-veo-todo-perfecto.hbs":
+    case "ya-veo-todo-perfecto.hbs":
       gulp.src('src/wow-i-can-see-clearly-now.hbs').pipe(handlebars(templateData, options)).pipe(rename('wow-i-can-see-clearly-now.html')).pipe(gulp.dest('dist'));
-      gulp.src('src/ahora-veo-todo-perfecto.hbs').pipe(handlebars(templateData, options)).pipe(rename('ahora-veo-todo-perfecto.html')).pipe(gulp.dest('dist'));
+      gulp.src('src/ya-veo-todo-perfecto.hbs').pipe(handlebars(templateData, options)).pipe(rename('ya-veo-todo-perfecto.html')).pipe(gulp.dest('dist'));
     break;
   }
   //cb();

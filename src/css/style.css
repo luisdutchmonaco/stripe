@@ -243,6 +243,8 @@ footer ul.links li { width: 50%;}
 
 
 @media only screen and (max-width: 800px) {
+  h3.subtitle { padding-left: 20px; padding-right: 20px;}
+  main section.coloring-sheets h3 { padding-right: 45px; width: 95%; margin: auto;}
   .nav { padding-left: 15px; padding-right: 15px;}
   .row.half .col { width: 100%; display:block;}
   footer .row p { text-align: center; }
@@ -287,8 +289,8 @@ footer ul.links li { width: 50%;}
   main section.coloring-sheets .holder .sw-prev { display: none; }
   main section.preview .slider .sw-next { display: none !important; }
   main section.preview .slider .sw-prev { display: none !important; }
-  footer form input { height: 40px; max-width: 250px; text-indent: 8px;}
-  footer .row .col a.btn { height: 40px; font-size: 18px; line-height: 18px; min-width: 100px !important;}
+  footer form input { height: 40px; max-width: 220px; text-indent: 8px; font-size: 12px;}
+  footer .row .col a.btn { height: 40px; font-size: 16px; line-height: 16px; min-width: 75px !important;}
 }
 
 @media only screen and (max-width: 600px) {
