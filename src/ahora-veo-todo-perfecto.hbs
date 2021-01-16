@@ -447,7 +447,7 @@ $("a.onClickForm").click(function(){
     method: 'POST',
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString()
-  }).then(() => $("#email").attr("placeholder", "{{global.footer.input_ok.es}}").blur()).catch((error) => alert(error)) });
+  }).then(() => $("#email").attr("placeholder", "{{global.footer.input_ok.es}}").val("").blur()).catch((error) => alert(error)) });
 
 });
 
