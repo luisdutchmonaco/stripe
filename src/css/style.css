@@ -448,7 +448,7 @@ fill: #fff;
 
 
 .background { position: absolute; min-height: 100%; bottom:0; width: 100%; background: url(../img/bck-off.png) top center; z-index: 1; top: 0; left:0; background-size: 50% auto; opacity: 1; }
-.background .stars.on {  position: absolute; top:0; bottom: 0;left:0; min-height: 100%; width: 100%; background: url(../img/bck-on.png) top center; opacity: 0; animation: pulse 6s infinite ease; background-size: 50% auto; opacity: 1; }
+.background .stars.on {  position: absolute; top:0; bottom: 0;left:0; min-height: 100%; width: 100%; background: url(../img/bck-on.png) top center; opacity: 0; animation: pulse 6s infinite ease; background-size: 50% auto; opacity: 0; }
 /*
 @keyframes pulse {
   0%   { opacity:1; }
