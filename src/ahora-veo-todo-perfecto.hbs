@@ -73,11 +73,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="gallery sw-next"><span class="on"></span><span class="off"></span></div>
     <div class="swiper-container overlay">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="img/prev001.png" class="responsive"/></div>
-        <div class="swiper-slide"><img src="img/prev002.png" class="responsive"/></div>
-        <div class="swiper-slide"><img src="img/prev003.png" class="responsive"/></div>
-        <div class="swiper-slide"><img src="img/prev004.png" class="responsive"/></div>
-        <div class="swiper-slide"><img src="img/prev005.png" class="responsive"/></div>
+        {{#sections.preview.carousell_es}}
+        <div class="swiper-slide"><img src="{{this.url}}" class="responsive"/></div>
+        {{/sections.preview.carousell_es}}
       </div>
     </div>
   </div>
