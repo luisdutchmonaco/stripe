@@ -74,7 +74,7 @@ async function data(cb){
     var meta = {
       title : { en: _.findWhere(content, {id: "reco4WfhYUpEetkd3"}).fields.en, es: _.findWhere(content, {id: "reco4WfhYUpEetkd3"}).fields.es },
       description : { en: _.findWhere(content, {id: "recpcUy8mPO1NJ2ot"}).fields.en, es: _.findWhere(content, {id: "recpcUy8mPO1NJ2ot"}).fields.es },
-      og_image : { en: _.findWhere(content, {id: "recJC2B5AfGd2vK5W"}).fields.en, es: _.findWhere(content, {id: "recJC2B5AfGd2vK5W"}).fields.es },
+      og_image : { en: _.findWhere(content, {id: "recRcbpnssWLmrxlj"}).fields.en, es: _.findWhere(content, {id: "recsxu9eWoR8ucCNz"}).fields.es },
       og_url : { en: _.findWhere(content, {id: "recJC2B5AfGd2vK5W"}).fields.en, es: _.findWhere(content, {id: "recJC2B5AfGd2vK5W"}).fields.es },
       shopifylink: { en: _.findWhere(content, {id: "reczCCpYmolJvjxdz"}).fields.en, es: _.findWhere(content, {id: "reczCCpYmolJvjxdz"}).fields.es },
       shopifybtnlbl: { en: _.findWhere(content, {id: "recTnwj7lZF9SmSeT"}).fields.en, es: _.findWhere(content, {id: "recTnwj7lZF9SmSeT"}).fields.es },
