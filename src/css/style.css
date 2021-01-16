@@ -282,11 +282,13 @@ footer ul.links li { width: 50%;}
   footer p.desktop { display: none; }
   footer ul.links { margin: auto; text-align: center;}
   footer ul.links li { width: 50%; text-align: center; padding-top: 0px;}
-    footer ul.links li a { margin: auto;}
+  footer ul.links li a { margin: auto;}
   main section.coloring-sheets .holder .sw-next { display: none; }
   main section.coloring-sheets .holder .sw-prev { display: none; }
   main section.preview .slider .sw-next { display: none !important; }
   main section.preview .slider .sw-prev { display: none !important; }
+  footer form input { height: 40px; max-width: 250px; text-indent: 8px;}
+  footer .row .col a.btn { height: 40px; font-size: 18px; line-height: 18px; min-width: 100px !important;}
 }
 
 @media only screen and (max-width: 600px) {
