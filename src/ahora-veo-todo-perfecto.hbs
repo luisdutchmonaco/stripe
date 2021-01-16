@@ -182,21 +182,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </center>
             <div class="swiper-container quotes">
               <div class="swiper-wrapper">
+                {{#sections.testimonials.quotes_es}}
                 <div class="swiper-slide">
-                  <h3 class="subtitle centered">Absolutely Beautiful!</h3>
-                  <p class="centered">My children and I bonded over the story of beautiful Lelu and her quest find how to correct the issues with her vision.</p>
-                  <p class="centered">- Happy Mom</p>
+                  <h3 class="subtitle centered">{{this.title}}</h3>
+                  <p class="centered">{{this.copy}}</p>
+                  <p class="centered">- {{this.author}}</p>
                 </div>
-                <div class="swiper-slide">
-                  <h3 class="subtitle centered">Pure Innocence</h3>
-                  <p class="centered">Innocent, easy to read and beautifully written. This is a story that will stay with us over the years. Recommended!</p>
-                  <p class="centered">- Always Smiling Fam</p>
-                </div>
-                <div class="swiper-slide">
-                  <h3 class="subtitle centered">A Collectible</h3>
-                  <p class="centered">One of those reads that any young family should have. Perfect for our collection</p>
-                  <p class="centered">- Nana</p>
-                </div>
+                {{/sections.testimonials.quotes_es}}
               </div>
               <div class="swiper-pagination"></div>
             </div>

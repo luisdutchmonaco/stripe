@@ -103,6 +103,21 @@ async function data(cb){
     var pdfs_es = _.findWhere(content, {id: "rectfPdUVoBW6gkRF"}).fields.Files;
     attachments_es.forEach(function(item,index){ attachments_es[index].pdf = pdfs_es[index].url; });
 
+    quotes = _.findWhere(content, {id: "recANDPD7pQ5wbmwA"}).fields.en.split("+");
+    quotes_en = [];
+    for(var i=0;i<quotes.length;i++){
+      var temp = quotes[i].split("|");
+      quotes_en.push({title : temp[0].trim(), copy: temp[1], author: temp[2] });
+    }
+    quotes = null;
+    quotes = _.findWhere(content, {id: "recANDPD7pQ5wbmwA"}).fields.es.split("+");
+    quotes_es = [];
+    for(var i=0;i<quotes.length;i++){
+      var temp = quotes[i].split("|");
+      quotes_es.push({title : temp[0].trim(), copy: temp[1], author: temp[2] });
+    }
+
+
     sections = {
       ourbook : {
         title : { en: _.findWhere(content, {id: "rec3Ls2OZURA3LPZY"}).fields.en, es: _.findWhere(content, {id: "rec3Ls2OZURA3LPZY"}).fields.es },
@@ -121,6 +136,8 @@ async function data(cb){
       },
       testimonials: {
         image: { en: _.findWhere(content, {id: "recqc7icWSxB5Sed3"}).fields.Attachments[0].url, es: _.findWhere(content, {id: "recwlWj0kjqGb0A9d"}).fields.Attachments[0].url },
+        quotes_en : quotes_en,
+        quotes_es : quotes_es,
       }
     }
 
