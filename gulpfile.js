@@ -94,9 +94,13 @@ async function data(cb){
       badge_bottom : { en: _.findWhere(content, {id: "rec2cMcusHXXRqSwQ"}).fields.en, es: _.findWhere(content, {id: "rec2cMcusHXXRqSwQ"}).fields.es },
     }
 
-    var attachments = _.findWhere(content, {id: "rec4XnNGwnCtdXWbA"}).fields.Attachments;
-    var pdfs = _.findWhere(content, {id: "rec4XnNGwnCtdXWbA"}).fields.Files;
-    attachments.forEach(function(item,index){ attachments[index].pdf = pdfs[index].url; });
+    var attachments_en = _.findWhere(content, {id: "rec4XnNGwnCtdXWbA"}).fields.Attachments;
+    var pdfs_en = _.findWhere(content, {id: "rec4XnNGwnCtdXWbA"}).fields.Files;
+    attachments_en.forEach(function(item,index){ attachments_en[index].pdf = pdfs_en[index].url; });
+
+    var attachments_es = _.findWhere(content, {id: "rectfPdUVoBW6gkRF"}).fields.Attachments;
+    var pdfs_es = _.findWhere(content, {id: "rectfPdUVoBW6gkRF"}).fields.Files;
+    attachments_es.forEach(function(item,index){ attachments_es[index].pdf = pdfs_es[index].url; });
 
     sections = {
       ourbook : {
@@ -111,7 +115,8 @@ async function data(cb){
       },
       coloring: {
         title : { en: _.findWhere(content, {id: "rec54kqRXproX1n4A"}).fields.en, es: _.findWhere(content, {id: "rec54kqRXproX1n4A"}).fields.es },
-        carousell : attachments,
+        carousell_en : attachments_en,
+        carousell_es : attachments_es,
       },
       testimonials: {
         image: { en: _.findWhere(content, {id: "recqc7icWSxB5Sed3"}).fields.Attachments[0].url, es: _.findWhere(content, {id: "recwlWj0kjqGb0A9d"}).fields.Attachments[0].url },
