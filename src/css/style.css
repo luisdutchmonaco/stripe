@@ -61,7 +61,8 @@ header .hero { min-height: 400px; color: #fff; padding-top: 80px; padding-bottom
 header .hero p { color: #9f97a4; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 100; margin-bottom: 0px;}
 header .hero .row .col { position: relative;}
 header .hero .row .col:first-child img { max-width: 90%; margin: auto; }
-header .hero .actions {  }
+header .hero .actions { max-width: 480px; }
+header .hero p { padding-left: 0px; padding-right: 0px;}
 header .hero .actions .col { min-height: auto;}
 header .hero h2 { font-size: 40px; color:#ffdd17; text-align: center; font-family: 'Quicksand', sans-serif; font-weight: 700;}
 header .hero a.badge { background-color: #ffdd17; color:#835c6a; font-size: 12px; line-height: 12px;width: 110px; height: 110px; position: absolute; top: 0px; right: -45px; display: block; border-radius: 100px;}

@@ -257,7 +257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       </div>
       <div class="col aright">
-        <form id="subscribe" name="subscribe" method="POST" data-netlify="true"><input type="email" id="nemail" name="nemail" placeholder="{{global.footer.input_ph.en}}" value="" /> <a href="javascript:void(0)" class="btn purple onClickForm">{{global.footer.input_btn.en}}</a></form>
+        <form id="subscribe" name="subscribe" method="POST" data-netlify="true"><input type="email" id="nemail" name="nemail" placeholder="{{global.footer.input_ph.en}}" value="" /> <a href="javascript:void(0)" class="btn purple onClickForm">{{global.footer.input_btn.en}}</a><input type="hidden" name="lang" value="en" /></form>
         <p class="mobile">{{{global.footer.copy.en}}}</p>
       </div>
     </div>
@@ -445,7 +445,11 @@ $("a.onClickForm").click(function(){
     method: 'POST',
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString()
-  }).then(() => console.log('Form successfully submitted')).catch((error) =>
+  }).then(() =>
+
+    $("#nemail").attr("placeholder", "Thank you for subscribing!").blur();
+
+  ).catch((error) =>
     alert(error))
 });
 
