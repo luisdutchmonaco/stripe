@@ -274,7 +274,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-
 var mySwiper = new Swiper('.swiper-container.images', {
   direction: 'horizontal',
   loop: false,
@@ -370,6 +369,7 @@ $(document).ready(function(){
 
   $("a.onClickNav").click(function(){
     $(this).toggleClass("active");
+    if($("#modal").is(":visible")){ $(".menu a").removeClass("active"); $("#modal").fadeOut(); $(".nav").removeClass("open").hide(); return;  }
     if($(".nav").is(":visible")){ $(".nav").removeClass("open").fadeOut(); }else { $(".nav").addClass("open").fadeIn(); }
   });
 
@@ -415,11 +415,6 @@ $(document).ready(function(){
     });
   });
 
-$("#app").click(function(e){
-  //if($(e.target).hasClass("onClickNav")){ return; }
-  //$(".menu a").removeClass("active");
-  //$(".nav").removeClass("open").fadeOut();
-});
 
 $("a.close").click(function(){
    $(".window").fadeOut();
@@ -429,6 +424,7 @@ $("a.close").click(function(){
 $("a.onClickModal").click(function(){
   $(".window").fadeIn();
   $("#modal").fadeIn();
+  $(".menu a").addClass("active");
 });
 
 $(document).keyup(function(e) {
@@ -438,8 +434,8 @@ $(document).keyup(function(e) {
   }
 });
 
-$(".background").height($(document).height());
-$(".background .stars").height($(document).height());
+$(".background").height($("body").height());
+$(".background .stars").height($("body").height());
 
 $("a.onClickForm").click(function(){
   $("#nemail").removeClass("error");
@@ -461,10 +457,7 @@ $("a.onClickForm").click(function(){
 
 });
 
-function addToCart(){
-  $("").trigger('click');
-  $(".shopify-buy-frame iframe").contents().find('button.shopify-buy__btn').trigger("click");
-}
+
 
 function ValidateEmail(mail) {
  if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)){
