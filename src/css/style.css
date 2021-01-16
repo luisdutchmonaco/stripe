@@ -31,7 +31,7 @@ footer{ z-index: 2; position: relative; }
 
 
 #gallery { position: fixed; top: 0; bottom: 0; left:0; right: 0; background:#f7f5f7; z-index: 10; display: none;}
-#gallery .slider { max-width: 500px; margin: auto; padding-top: 100px; position: relative;}
+#gallery .slider { max-width: 80%; margin: auto; padding-top: 100px; position: relative;}
 #gallery .sw-prev { outline: none;width: 34px; height: 50px; position: absolute; top:50%; margin-top: -15px; left:-45px; }
 #gallery .sw-prev:hover { cursor: pointer; }
 #gallery .sw-prev span { width: 34px; height: 50px; display: block; position: absolute; transition: all .15s ease-out;  }
