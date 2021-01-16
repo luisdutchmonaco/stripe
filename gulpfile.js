@@ -57,6 +57,7 @@ async function data(cb){
       copy : { en: _.findWhere(content, {id: "recBKcdZwWLE9X32B"}).fields.en, es: _.findWhere(content, {id: "recBKcdZwWLE9X32B"}).fields.es },
       ebcopy : { en: _.findWhere(content, {id: "recfODyniv2R89Ewa"}).fields.en, es: _.findWhere(content, {id: "recfODyniv2R89Ewa"}).fields.es },
       input_ph : { en: _.findWhere(content, {id: "recktzWmoVPg9c2w4"}).fields.en, es: _.findWhere(content, {id: "recktzWmoVPg9c2w4"}).fields.es },
+      input_ok : { en: _.findWhere(content, {id: "recbBwm8YcriFPELE"}).fields.en, es: _.findWhere(content, {id: "recbBwm8YcriFPELE"}).fields.es },
       input_btn : { en: _.findWhere(content, {id: "recwmP0oAmk7CB8VB"}).fields.en, es: _.findWhere(content, {id: "recwmP0oAmk7CB8VB"}).fields.es },
     }
     var modal = {

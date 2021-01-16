@@ -367,12 +367,10 @@ $(document).ready(function(){
   $("a.onClickNav").click(function(){
     $(this).toggleClass("active");
     if($("#modal").is(":visible")){ $(".menu a").removeClass("active"); $("#modal").fadeOut(); $(".nav").removeClass("open").hide(); return;  }
+    if($("#gallery").is(":visible")){ $(".menu a").removeClass("active"); $("#gallery").fadeOut(); $(".nav").removeClass("open").hide(); return;  }
     if($(".nav").is(":visible")){ $(".nav").removeClass("open").fadeOut(); }else { $(".nav").addClass("open").fadeIn(); }
   });
 
-  $("a.closeGallery").click(function(){
-    $("#gallery").fadeOut();
-  });
 
 
   $("a.onClickGallery").click(function(){
@@ -409,6 +407,7 @@ $(document).ready(function(){
         $('#gallery .sw-prev').show();
       };
       $("#gallery .slider").css('opacity',1);
+      $(".menu a").addClass("active");
     });
   });
 
@@ -435,10 +434,10 @@ $(".background").height($("body").height());
 $(".background .stars").height($("body").height());
 
 $("a.onClickForm").click(function(){
-  $("#nemail").removeClass("error");
-  var email = $("#nemail").val();
+  $("#email").removeClass("error");
+  var email = $("#email").val();
   if(!ValidateEmail(email)){
-    $("#nemail").addClass("error");
+    $("#email").addClass("error");
     return;
   }
 
@@ -448,9 +447,7 @@ $("a.onClickForm").click(function(){
     method: 'POST',
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString()
-  }).then(() => console.log('Form successfully submitted')).catch((error) =>
-    alert(error))
-});
+  }).then(() => $("#email").attr("placeholder", "{{global.footer.input_ok.es}}").blur()).catch((error) => alert(error)) });
 
 });
 
