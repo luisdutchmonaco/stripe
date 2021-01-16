@@ -295,6 +295,14 @@ footer ul.links li { width: 50%;}
 
 @media only screen and (max-width: 600px) {
   #gallery .slider { max-width: 80%; margin: auto;}
+  header .hero a.badge.top { top:-85px;}
+  header .hero a.badge { top:-50px; }
+  .background { background-size: auto !important; }
+}
+
+@media only screen and (max-width: 380px) {
+  header .hero a.badge.top { top:-95px;}
+  header .hero a.badge { top:-60px; }
 }
 
 .left-arrow.swiper-button-disabled {opacity: 0;}
