@@ -78,7 +78,11 @@ async function data(cb){
       og_url : { en: _.findWhere(content, {id: "recJC2B5AfGd2vK5W"}).fields.en, es: _.findWhere(content, {id: "recJC2B5AfGd2vK5W"}).fields.es },
       shopifylink: { en: _.findWhere(content, {id: "reczCCpYmolJvjxdz"}).fields.en, es: _.findWhere(content, {id: "reczCCpYmolJvjxdz"}).fields.es },
       shopifybtnlbl: { en: _.findWhere(content, {id: "recTnwj7lZF9SmSeT"}).fields.en, es: _.findWhere(content, {id: "recTnwj7lZF9SmSeT"}).fields.es },
+      shopifyBuyNowlink: { en: _.findWhere(content, {id: "recGgoKNcbU59GHJa"}).fields.en, es: _.findWhere(content, {id: "recGgoKNcbU59GHJa"}).fields.es },
+    }
 
+    nav = {
+      title: { en: _.findWhere(content, {id: "recpkOejScMLTdV2m"}).fields.en, es: _.findWhere(content, {id: "recpkOejScMLTdV2m"}).fields.es },
     }
 
     buttons = {

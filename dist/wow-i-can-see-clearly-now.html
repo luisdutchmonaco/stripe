@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-  <link href="css/style.min.css" rel="stylesheet">
+  <link href="../css/style.min.css" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Google Tag Manager -->
@@ -63,8 +63,7 @@
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP97SJX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP97SJX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div id="gallery">
   <div class="slider">
@@ -131,7 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="https://dl.airtable.com/.attachments/792643ca661904fc94d5be5ccac10662/386fa966/wicsn-logo.svg" class="responsive" />
           <br /><br />
           <div class="row actions desktop">
-            <div class="col"><a href="javascript:void(0)" class="btn onClickModal yellow">Pre-order</a><p>Hardcover $11.99 + $2.99 S&amp;H</p></div>
+            <div class="col"><div id='product-component-1611093313298'></div><p>Hardcover $11.99 + $2.99 S&amp;H</p></div>
             <div class="col"><a href="javascript:void(0)" class="btn onClickModal purple">Download</a><p>eBook or PDF $5.99</p></div>
           </div>
         </div>
@@ -145,7 +144,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <span class="extra">eBook or PDF</span></a>
         <img src="https://dl.airtable.com/.attachments/64ed80508bbc36181af6b5b1ade6c7c6/fdfa731d/header.png" class="responsive"/><h2>Pre-Order Now!</h2>
         <div class="row actions mobile hidden">
-          <div class="col"><a href="javascript:void(0)" class="btn onClickModal yellow">Pre-order</a><p>Hardcover $11.99 + $2.99 S&amp;H</p></div>
+          <div class="col"><a href="https://store.curiositylandia.com/cart/37923683795117:1?channel&#x3D;buy_button" class="btn onClickModal yellow">Pre-order</a><p>Hardcover $11.99 + $2.99 S&amp;H</p></div>
           <div class="col"><a href="javascript:void(0)" class="btn onClickModal purple">Download</a><p>eBook or PDF $5.99</p></div>
         </div>
       </div>
@@ -187,7 +186,7 @@ When something doesn’t feel right, the first step is to talk about it and find
                 </div>
               </div>
               <div class="row half actions">
-                <div class="col"><a href="javascript:void(0)" class="btn onClickModal yellow">Pre-order</a><p>Hardcover $11.99 + $2.99 S&amp;H</p></div>
+                <div class="col"><div id='product-component-1611093313298-2'></div><p>Hardcover $11.99 + $2.99 S&amp;H</p></div>
                 <div class="col"><a href="javascript:void(0)" class="btn onClickModal purple">Download</a><p>eBook or PDF $5.99</p></div>
               </div>
             </div>
@@ -394,6 +393,8 @@ $(document).ready(function(){
 
 
 
+
+
   $("a.onClickGallery").click(function(){
     var idx = $(this).data("idx");
     $("#gallery .slider").css('opacity',0);
@@ -404,6 +405,12 @@ $(document).ready(function(){
       initialSlide: idx,
       spaceBetween : 15,
       navigation: { nextEl: '#gallery .sw-next', prevEl: '#gallery .sw-prev' },
+      breakpoints: {
+        800: { slidesPerView: 1 },
+        640: { slidesPerView: 1.1 },
+        480: { slidesPerView: 1.1 },
+        320: { slidesPerView: 1.1 },
+      },
     });
     mySwiper3.on('init',function(){ $('#gallery .sw-prev').hide(); });
     mySwiper3.on('slideChange', function () {
@@ -444,6 +451,12 @@ $("a.onClickModal").click(function(){
   $(".menu a").addClass("active");
 });
 
+$("a.onClickBuyHC").click(function(){
+  $("#product-component-1611093313298 button")[0]('click');
+  console.log($("#product-component-1611093313298 button")[0]);
+  alert(213);
+});
+
 $(document).keyup(function(e) {
   if (e.keyCode === 27){
     $(".window").fadeOut();
@@ -451,8 +464,7 @@ $(document).keyup(function(e) {
   }
 });
 
-$(".background").height($("body").height());
-$(".background .stars").height($("body").height());
+
 
 $("a.onClickForm").click(function(){
   $("#email").removeClass("error");
@@ -472,6 +484,11 @@ $("a.onClickForm").click(function(){
 
 });
 
+window.addEventListener('load', function(){
+  $(".background").height($("body").height());
+  $(".background .stars").height($("body").height());
+});
+
 
 
 function ValidateEmail(mail) {
@@ -483,9 +500,6 @@ function ValidateEmail(mail) {
 
 
 </script>
-
-
-<div id='product-component-1610758914944'></div>
 <script type="text/javascript">
 /*<![CDATA[*/
 (function () {
@@ -514,67 +528,71 @@ function ValidateEmail(mail) {
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent('product', {
         id: '6171554644141',
-        node: document.getElementById('product-component-1610758914944'),
+        node: document.getElementById('product-component-1611093313298'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "calc(25% - 20px)",
-          "margin-left": "20px",
-          "margin-bottom": "50px"
-        }
-      }
-    },
-    "contents": {
-      "img": false,
-      "title": false,
-      "price": false
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "cart": {
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  }
-},
+          "product": {
+            iframe: false,
+            classes: { button: 'btn yellow' },
+            "contents": { "img": false, "title": false, "price": false },
+            "text": { "button": "Pre-order"}
+          },
+          "cart": {
+            "styles": { "button":
+              { "font-size": "13px","padding-top": "14.5px","padding-bottom": "14.5px","background-color":"9f97a4","outline":0,":hover":{
+                "background-color":"#ffdd17",
+                "color":"#7a616c"
+              }
+            }
+            },
+            "text": { "total": "Subtotal", "button": "Checkout" },
+            "popup": false
+          },
+          "toggle": {
+            "styles": {
+              "count": {
+                "font-size": "13px",
+              },
+              "icon" : {
+                "fill" : "#000",
+              },
+              "toggle": {
+                "background-color":"9f97a4",
+                ":hover":{
+                  "background-color":"#ffdd17",
+                  "color":"#7a616c"
+                }
+              },
+            }
+          }
+        },
       });
+
+      ui.createComponent('product', {
+        id: '6171554644141',
+        node: document.getElementById('product-component-1611093313298-2'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          "product": {
+            iframe: false,
+            classes: { button: 'btn yellow' },
+            "contents": { "img": false, "title": false, "price": false },
+            "text": { "button": "Add to cart"}
+          },
+          "cart": {
+            "styles": { "button": { "font-size": "13px","padding-top": "14.5px","padding-bottom": "14.5px","background-color":"9f97a4"} },
+            "text": { "total": "Subtotal", "button": "Checkout" },
+            "popup": false,
+          },
+          "toggle": {
+            "styles": { "count": { "font-size": "13px" } }
+          }
+        },
+      });
+      //console.log(ui.components.cart[0].addVariantToCart({id: 6171554644141},1));
+
     });
+
   }
 })();
 /*]]>*/

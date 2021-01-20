@@ -13,20 +13,16 @@
   <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
   <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://curiositylandia.com/wow-i-can-see-clearly-now">
   <meta property="og:title" content="Curiositylandia | Books and Digital Content for Children">
   <meta property="og:description" content="Curiositylandia is a publisher of books and digital content for children. ">
   <meta property="og:image" content="">
-
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://curiositylandia.com/wow-i-can-see-clearly-now">
   <meta property="twitter:title" content="Curiositylandia | Books and Digital Content for Children">
   <meta property="twitter:description" content="Curiositylandia is a publisher of books and digital content for children. ">
   <meta property="twitter:image" content="">
-
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
@@ -40,6 +36,10 @@
   <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
   <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+  <link rel="stylesheet" href="build/senna.css">
+  <script src="build/globals/senna-debug.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -83,9 +83,10 @@ function handleComplete(evt,comp) {
 		createjs.Ticker.addEventListener("tick", stage);
     var language = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
     if(language.indexOf("es")!=-1){
-      setTimeout(function(){ location.href= '/ahora-veo-todo-perfecto' },4000);
+      //setTimeout(function(){ location.href= '/ahora-veo-todo-perfecto' },4000);
     }else{
-      setTimeout(function(){ location.href= '/wow-i-can-see-clearly-now' },4000);
+      setTimeout(function(){ document.getElementById("temp").click(); },4000);
+
     }
 
 	}
@@ -97,15 +98,18 @@ function handleComplete(evt,comp) {
 </script>
 </head>
 <style>
-body {   display: flex; background-color: #E9F8FF;
+body {
+  display: flex; background-color: #E9F8FF;
   align-items: center;
   justify-content: center; height: 100vh;}
 </style>
-<body onload="init();" style="margin:0px;">
+<body onload="init();" style="margin:0px;" data-senna data-senna-surface>
 	<div id="animation_container" style="background-color:rgba(233, 248, 255, 1.00); width:100%; height:auto">
 		<canvas id="canvas" style="position: absolute; display: block; background-color:rgba(233, 248, 255, 1.00);"></canvas>
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:100; height:auto; position: absolute; left: 0px; top: 0px; display: block;">
 		</div>
 	</div>
+
+  <a href="wow-i-can-see-clearly-now.html" id="temp" style="display:none"></a>
 </body>
 </html>
